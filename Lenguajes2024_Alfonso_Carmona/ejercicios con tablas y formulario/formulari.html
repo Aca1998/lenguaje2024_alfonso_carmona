@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   
+    <title>Formulario de Inscripción</title>
+</head>
+<body>
+
+    <h2>Formulario de Inscripción al Sistema</h2>
+    <p>* Todos los campos son obligatorios</p>
+
+    <form action="#" method="post">
+        <!--Nombre de los clientes-->
+        <label for="nombres">Nombres:</label><br>
+        <input type="text" id="nombres" name="nombres" required><br><br>
+        <!--Apellidos-->
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+        <!--Empresa/institucion-->
+        <label for="empresa">Empresa/Institución:</label><br>
+        <input type="text" id="empresa" name="empresa" required><br><br>
+        <!--Ambito de la empresa-->
+        <label for="ambito">Ámbito de la empresa:</label><br>
+        <input type="text" id="ambito" name="ambito" value="Educación" required><br><br>
+        <!--Cargo -->
+        <label for="cargo">Cargo:</label><br>
+        <input type="text" id="cargo" name="cargo" required><br><br>
+        <!--Usuario-->
+        <label for="usuario">Nombre de usuario:</label><br>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+        <!--Contraseña -->
+        <label for="contrasena">Contraseña:</label><br>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+        <!--Repite la contraseña-->
+        <label for="repita_contrasena">Repita contraseña:</label><br>
+        <input type="password" id="repita_contrasena" name="repita_contrasena" required><br><br>
+        <!--Correo-->
+        <label for="correo">Correo electrónico:</label><br>
+        <input type="email" id="correo" name="correo" required><br><br>
+        <!--Termino y condiciones-->
+        <input type="checkbox" id="terminos" name="terminos" required>
+        <label for="terminos">He leído y acepto los términos del sistema</label><br><br>
+        <!--Casilla para enviar formulario -->
+        <input type="submit" value="Enviar formulario">
+    </form>
+
+</body>
+</html>
