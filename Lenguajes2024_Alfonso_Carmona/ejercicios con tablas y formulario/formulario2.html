@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <title>Formulario de Contacto</title>
+    <style>
+        /* color de fondo y centrado del formulario */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        /* color y bordes de el formulario */
+        .form-container {
+            width: 350px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 60px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 6px solid #b847a6;
+        }
+        /* color del titulo y centrado */
+        .form-container h2 { 
+            color: #0f0f0e;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .form-container p {
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        /* tamaño de letra de denajo de formulario */
+        .form-container label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .form-container input[type="text"], .form-container input[type="email"], 
+        .form-container input[type="tel"], .form-container input[type="url"], 
+        .form-container textarea {
+            /* tamaño del borde donde se escribe */
+            width: 100%;
+            padding: 11px;
+            margin-bottom: 15px;
+            border: 1px solid #5c3d3d;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            /* tamaño de el icono de enviar  */
+            width: 100%;
+            background-color: #b847a6;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Formulario de contacto</h2>
+        <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
+        
+            <!-- donde ingresas el nombre  -->
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+            <!-- para ingresar el email -->
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="Escribe tu Email" required>
+            <!-- para poner tu numero de telf  -->
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Escribe tu teléfono">
+            <!-- para escribir la url  -->
+            <label for="sitio_web">Sitio web</label>
+            <input type="url" id="sitio_web" name="sitio_web" placeholder="Escribe la URL de tu web">
+            <!-- para escribir el asunto  -->
+            <label for="asunto">Asunto *</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Escribe un asunto" required>
+            
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Deja aquí tu comentario..." rows="4" required></textarea>
+            <!-- para darle a enviar  -->
+            <input type="submit" value="ENVIAR">
+        </form>
+        <p class="mandatory">* los campos son obligatorios.</p>
+    </div>
+
+</body>
+</html>
