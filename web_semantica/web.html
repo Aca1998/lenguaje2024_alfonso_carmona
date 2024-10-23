@@ -5,89 +5,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seres Mitológicos</title>
-</head>
-<style>
-    body {
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-        text-align: center;
-    }
-</style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            padding: 20px;
+        }
+
+        aside {
+            width: 25%;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        section {
+            width: 75%;
+            padding: 20px;
+        }
+
+        article {
+            background-color: #eee;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        figure img {
+            width: 100%;
+        }
+    </style>
+</head>
 
 <body>
 
-    <!-- Cabecera -->
     <header>
         <h1>Seres Mitológicos</h1>
-        <p>Descubre las criaturas más fascinantes de la mitología</p>
     </header>
 
-    <!-- Barra de navegación -->
     <nav>
-
-        <li><a href="/index.html">Inicio</a></li>
-        <li><a href="#criaturas">Criaturas</a></li>
-       
+        <a href="/index.html">Inicio</a>
 
     </nav>
 
-    <!-- Contenido principal -->
     <main>
-        <!-- Sección principal -->
-        <section id="criaturas">
-            <article>
-                <h2>El Dragón</h2>
-                <p>Los <mark>dragones</mark> son seres mitológicos conocidos en diversas culturas, representando poder y
-                    sabiduría. Se cree que podían volar y escupir fuego.</p>
-                <figure>
-                    <img src="/web_semantica/imagenes/dragon.jpg" width="300">
-                    <figcaption>Un dragón mitológico</figcaption>
+        <aside>
+            <h2>Secciones</h2>
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
 
-                    <!-- Video sobre el dragón -->
-                    <iframe width="360" height="215" src="https://www.youtube.com/embed/d553_F-dvtw?si=lgfMPToYo39QVtvo"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </ul>
+            <h2>Audio</h2>
+            <audio controls>
+                <source src= "/web_semantica/34 CRIATURAS MITOLÓGICAS de mitos y leyendas.mp3" type="video/mp4"
+                Tu navegador no soporta audio.
+            </audio>
+        </aside>
+
+        <section id="greek">
+            <h2>Mitología Griega</h2>
+
+            <article>
+                <h3>Cerbero</h3>
+                <p>Cerbero es el perro guardián del inframundo, con tres cabezas, encargado de evitar que los muertos
+                    escapen del reino de Hades.</p>
+                <figure>
+                    <img src="imagenes/cerbero.jpg" <b>Cerbero, el guardián del inframundo.</b>
                 </figure>
             </article>
 
-
             <article>
-                <h2>La Sirena</h2>
-                <p>Las sirenas son criaturas mitad mujer y mitad pez. Son conocidas por sus cantos mágicos, los cuales
-                    atraían a los marineros hacia su perdición.</p>
+                <h3>Medusa</h3>
+                <p>Medusa es una de las tres gorgonas, conocida por su cabello de serpientes y su habilidad para
+                    convertir en piedra a quien la mirara a los ojos.</p>
                 <figure>
-                    <img src="/web_semantica/imagenes/sirena.jpg" width="300">
-                    <figcaption>Representación de una sirena</figcaption>
-                    <!--Video sobre la sirena-->
-                    <iframe width="360" height="215" src="https://www.youtube.com/embed/jnwXCO4eoNc?si=ESpNricSIBF1ROif"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <img src="/web_semantica/imagenes/medusa.jpg" <figcaption>Medusa, la temida gorgona.</figcaption>
                 </figure>
             </article>
-
-            <details>
-                <summary><strong>Más información sobre seres mitológicos</strong></summary>
-                <p>En diferentes culturas, los seres mitológicos han sido símbolo de misterio y poder. Explora más sobre
-                    dragones, unicornios, gorgonas y otras criaturas.</p>
-            </details>
         </section>
 
-        <!-- Barra lateral -->
-        <aside>
-            <h3>Artículos relacionados</h3>
+        <section id="norse">
+            <h2>Mitología Nórdica</h2>
 
-            <li><a href="#">Los unicornios: Mitos y leyendas</a></li>
-            <li><a href="#">La historia de los cíclopes</a></li>
-            <li><a href="#">Los minotauros: Guardianes del laberinto</a></li>
+            <article>
+                <h3>Fenrir</h3>
+                <p>Fenrir es un lobo gigante de la mitología nórdica que está destinado a matar a Odín durante el
+                    Ragnarök.</p>
+                <figure>
+                    <img src="imagenes/fenrir.jpg" <figcaption>Fenrir, el lobo gigante.</figcaption>
+                </figure>
+            </article>
 
-        </aside>
+            <article>
+                <h3>Jörmungandr</h3>
+                <p>La serpiente de Midgard, también conocida como Jörmungandr, es tan grande que puede rodear el mundo y
+                    morder su propia cola.</p>
+                <figure>
+                    <img src="imagenes/Jörmungandr.jpg" <figcaption>Jörmungandr, la serpiente de Midgard.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section id="egyptian">
+            <h2>Mitología Egipcia</h2>
+
+            <article>
+                <h3>Anubis</h3>
+                <p>Anubis es el dios con cabeza de chacal, encargado de guiar a las almas al más allá y presidir sobre
+                    la momificación.</p>
+                <figure>
+                    <img src="imagenes/anubis.jpg" <figcaption>Anubis, dios de la momificación.</figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <h3>Ra</h3>
+                <p>Ra es el dios del sol en la mitología egipcia, considerado el creador del mundo y rey de los dioses.
+                </p>
+                <figure>
+                    <img src="imagenes/anubis.jpg" <figcaption>Ra, dios del sol y creador del mundo.</figcaption>
+                </figure>
+            </article>
+        </section>
     </main>
 
-    <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 Seres Mitológicos. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Mitología Web. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Video desde YouTube -->
+    <section>
+        <h2>Video de Mitología</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/66B7nTYt6GI?si=Oa99ZKpZKbOnwDcQ"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <!-- Video propio -->
+    <section>
+        <h2>Video Propio</h2>
+        <video controls width="560">
+            <source src="/web_semantica/La Serpiente del Mundo - Jörmundgander - Mitología Nórdica - Mira la Historia.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </section>
 
 </body>
 
