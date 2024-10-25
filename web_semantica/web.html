@@ -6,55 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seres Mitológicos</title>
     <style>
+        /* con esto seleciono el tipo de letra de el body y el  margen */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-
+        /* Esto seria el color del fondo , el color de la letra de la cabezera  */
         header {
             background-color: #333;
             color: #fff;
             padding: 10px;
             text-align: center;
         }
-
+        /* Esto corresponderia al navegador , el color de fondo  */
         nav {
             background-color: #444;
             padding: 10px;
             color: white;
             text-align: center;
         }
-
+        /* esto sirve para el color y el margen de el navegador de los enlaces */
         nav a {
             color: white;
             margin: 0 10px;
             text-decoration: none;
         }
-
+        /* Esto es el main */
         main {
             display: flex;
             padding: 20px;
         }
-
+        /* esto es para ajustar el ancho de la parte secciones  */
         aside {
             width: 25%;
             padding: 20px;
             background-color: #f4f4f4;
         }
-
+        /* Esto es para ajustar el largo  */
         section {
             width: 75%;
             padding: 20px;
         }
-
+        /* Esto es para el color del fondo del articulo , para los bordes y el margen */
         article {
             background-color: #eee;
             margin-bottom: 20px;
             padding: 15px;
             border-radius: 8px;
         }
-
+        /* esto es para la parte inferior de la pagina , para ajustar el color y el texto  */
         footer {
             background-color: #333;
             color: #fff;
@@ -68,7 +69,7 @@
         figure {
             margin: 0;
         }
-
+        /* para determinar el ancho de las figuras de la pagina  */
         figure img {
             width: 100%;
         }
@@ -76,6 +77,9 @@
 </head>
 
 <body>
+    <div class="logo">
+        <img src= "imagenes/logo medac.png" width="150">
+    </div>
 
     <header>
         <h1>Seres Mitológicos</h1>
@@ -94,13 +98,14 @@
 
             </ul>
             <h2>Audio</h2>
+            <!-- audio propio  -->
             <audio controls>
                 <source src= "/web_semantica/34 CRIATURAS MITOLÓGICAS de mitos y leyendas.mp3" type="video/mp4"
-                Tu navegador no soporta audio.
+                
             </audio>
         </aside>
 
-        <section id="greek">
+        <section id="Mitologia Griega">
             <h2>Mitología Griega</h2>
 
             <article>
@@ -122,7 +127,7 @@
             </article>
         </section>
 
-        <section id="norse">
+        <section id="Mitologia Nordica">
             <h2>Mitología Nórdica</h2>
 
             <article>
@@ -144,7 +149,7 @@
             </article>
         </section>
 
-        <section id="egyptian">
+        <section id="Mitologia Egipcia">
             <h2>Mitología Egipcia</h2>
 
             <article>
@@ -185,7 +190,7 @@
         <h2>Video Propio</h2>
         <video controls width="560">
             <source src="/web_semantica/La Serpiente del Mundo - Jörmundgander - Mitología Nórdica - Mira la Historia.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
+            
         </video>
     </section>
 
