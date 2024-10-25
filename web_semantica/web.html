@@ -14,8 +14,8 @@
         }
         /* Esto seria el color del fondo , el color de la letra de la cabezera  */
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: black;
+            color: #fbfdfbec;
             padding: 10px;
             text-align: center;
         }
@@ -73,6 +73,22 @@
         figure img {
             width: 100%;
         }
+        #video {
+          display: flex;  
+        justify-content: center;
+        align-items: center;
+        }
+
+        .video {
+
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+
+        }
     </style>
 </head>
 
@@ -85,10 +101,7 @@
         <h1>Seres Mitológicos</h1>
     </header>
 
-    <nav>
-        <a href="/index.html">Inicio</a>
-
-    </nav>
+  
 
     <main>
         <aside>
@@ -166,34 +179,33 @@
                 <p>Ra es el dios del sol en la mitología egipcia, considerado el creador del mundo y rey de los dioses.
                 </p>
                 <figure>
-                    <img src="imagenes/anubis.jpg" <figcaption>Ra, dios del sol y creador del mundo.</figcaption>
+                    <img src="/web_semantica/imagenes/Ra.jpg" <figcaption>Ra, dios del sol y creador del mundo.</figcaption>
                 </figure>
             </article>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Mitología Web. Todos los derechos reservados.</p>
+        <p>&copy; Web de Alfonso Carmona. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Video desde YouTube -->
-    <section>
+    <section class="video">
         <h2>Video de Mitología</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/66B7nTYt6GI?si=Oa99ZKpZKbOnwDcQ"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
 
-    <!-- Video propio -->
-    <section>
-        <h2>Video Propio</h2>
-        <video controls width="560">
-            <source src="/web_semantica/La Serpiente del Mundo - Jörmundgander - Mitología Nórdica - Mira la Historia.mp4" type="video/mp4">
+            <h2>Video Propio</h2>
+        
+            <video controls width="560">
+                <source src="/web_semantica/La Serpiente del Mundo - Jörmundgander - Mitología Nórdica - Mira la Historia.mp4" type="video/mp4">
             
-        </video>
+            </video>
     </section>
 
+ 
 </body>
 
 </html>
