@@ -1,0 +1,88 @@
+ /*  márgenes  */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* con el body elegimos el tipo de letra , y el color de fondo  */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+/* Estilo para el encabezado principal */
+header {
+    background-color: #282c34;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+/* el margen del titulo y el tamaño */
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* Sección de texto general */
+div, p {
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #282c34;
+    font-size: 1.8em;
+    margin-top: 20px;
+    border-bottom: 2px solid #282c34;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #555;
+    font-size: 1.4em;
+    margin-top: 15px;
+}
+
+h4 {
+    color: #666;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Estilo para las imágenes */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 8px;
+  
+}
+
+/* Enlaces */
+a {
+    display: inline-block;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+
+/* Elementos destacados en negrita */
+b {
+    color: #444;
+}
+
+/* la estructura de las secciones */
+section {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
