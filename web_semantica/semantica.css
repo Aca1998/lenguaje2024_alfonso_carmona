@@ -6,21 +6,21 @@
 }
 /* Esto seria el color del fondo , el color de la letra de la cabezera  */
 header {
-    background-color: black;
+    background-color: rgb(54, 23, 192);
     color: #fbfdfbec;
     padding: 10px;
     text-align: center;
 }
 /* Esto corresponderia al navegador , el color de fondo  */
 nav {
-    background-color: #444;
+    background-color: #1422e4;
     padding: 10px;
     color: white;
     text-align: center;
 }
 /* esto sirve para el color y el margen de el navegador de los enlaces */
 nav a {
-    color: white;
+    color: rgb(10, 10, 10);
     margin: 0 10px;
     text-decoration: none;
 }
@@ -42,15 +42,15 @@ section {
 }
 /* Esto es para el color del fondo del articulo , para los bordes y el margen */
 article {
-    background-color: #eee;
+    background-color: #a7a0a0;
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 8px;
 }
 /* esto es para la parte inferior de la pagina , para ajustar el color y el texto  */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #0b3dc9;
+    color: #a19999;
     text-align: center;
     padding: 10px;
     position: fixed;
