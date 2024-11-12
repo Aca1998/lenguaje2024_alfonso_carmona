@@ -2,14 +2,14 @@
 
 td.blanco
 {
-    background-color: rgb(70, 26, 0);
+    background-color:burlywood;
     width: 100px;
     height: 100px;
 
 }
 td.negro
 {
-    background-color: rgba(70, 37, 0, 0.719);
+    background-color: rgba(63, 25, 0, 0.877);
     width: 100px;
     height: 100px;
 }
