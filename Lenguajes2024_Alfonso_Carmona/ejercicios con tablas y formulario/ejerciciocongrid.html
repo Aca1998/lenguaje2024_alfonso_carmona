@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diseño en 12 Columnas con CSS Grid</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 10px;
+        max-width: 1000px;
+    }
+
+    .box {
+        background-color: #a5cbe0;
+        text-align: center;
+        padding: 15px 0;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Tamaños de las cajas según el diseño */
+    .mitad {
+        grid-column: span 6;
+    }
+    
+    .tercio {
+        grid-column: span 4;
+    }
+    
+    .cuarto {
+        grid-column: span 3;
+    }
+    
+    .sexto {
+        grid-column: span 2;
+    }
+    .blanco{
+        grid-column: span 2;
+        background-color: white;
+    }
+    .blanco1{
+        grid-column: span 1;
+        background-color: white;
+    }
+    
+
+
+</style>
+</head>
+<body>
+
+<h1>Diseño en 12 columnas</h1>
+<div class="container">
+    <!-- Fila de mitad -->
+    <div class="box mitad">Mitad</div>
+    <div class="box mitad">Mitad</div>
+    
+    <!-- Fila de tercio -->
+    <div class="box tercio">Tercio</div>
+    <div class="box tercio">Tercio</div>
+    <div class="box tercio">Tercio</div>
+    
+    <!-- Fila de cuarto -->
+    <div class="box cuarto">Cuarto</div>
+    <div class="box cuarto">Cuarto</div>
+    <div class="box cuarto">Cuarto</div>
+    <div class="box cuarto">Cuarto</div>
+    
+    <!-- sexta fila -->
+    <div class="box sexto">Sexto</div>
+    <div class="box sexto">Sexto</div>
+    <div class="box sexto">Sexto</div>
+    <div class="box sexto">Sexto</div>
+    <div class="box sexto">Sexto</div>
+    <div class="box sexto">Sexto</div>
+
+    <div class="box blanco"></div>
+    <div class="box sexto">.</div>
+    <div class="box blanco1"></div>
+    <div class="box sexto"></div>
+    <div class="box blanco1"></div>
+    <div class="box sexto">.</div>
+    <div class="box blanco"></div>
+
+    <div class="box blanco1"></div>
+    <div class="box sexto">.</div>
+
+
+    
+   
+    
+</div>
+
+</body>
+</html>
