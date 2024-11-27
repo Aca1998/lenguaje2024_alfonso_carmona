@@ -5,6 +5,7 @@ body {
 }
 
 
+
 * {
     height: 100%;
     box-sizing: border-box;
@@ -28,38 +29,37 @@ p {
 
 
 
-
 div.azul {
     background-color: blue;
     width: 100%;
-    /* Ajusta el ancho */
     height: 30%;
-    /* Ajusta el largo */
 }
 
 div.rojo {
     background-color: red;
-    width: 50%;
-    /* Ajusta el ancho */
-    height: 60%;
-    /* Ajusta el largo */
+    width: 33.33%;
+    height: 400px;
     float: left;
 }
 
 div.verde {
     background-color: green;
-    width: 50%;
-    /* Ajusta el ancho */
-    height: 60%;
-    /* Ajusta el largo */
-    float: right;
+    width: 33.33%;
+    height: 400px;
+    float: left;
 }
 
 div.amarillo {
     background-color: yellow;
+    width: 33.33%;
+    height: 400px;
+    float: left;
+}
+
+div.naranja {
+    background-color: orange;
     width: 100%;
-    /* Ajusta el ancho */
-    height: 40%;
-    /* Ajusta el largo */
-    clear: both;
+    height: 700px;
+    padding: 400px;
+
 }

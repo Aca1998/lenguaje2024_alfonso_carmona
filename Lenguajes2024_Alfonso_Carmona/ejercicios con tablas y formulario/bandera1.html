@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandera de España</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .bandera {
+            width: 320px;
+            height: 200px;
+            position: relative;
+        }
+
+        .franja {
+            position: absolute;
+            width: 100%;
+            height: 33.33%; /* Cada franja ocupa un tercio de la altura */
+        }
+
+        .franjaarriba {
+            top: 0;
+            background-color: #c60b1e; /* Rojo */
+        }
+
+        .franjamedio {
+            top: 33.33%;
+            height: 33.34%; /* Ajuste para evitar un píxel de diferencia */
+            background-color: #ffc400; /* Amarillo */
+        }
+
+        .franjaabajo{
+            bottom: 0;
+            background-color: #c60b1e; /* Rojo */
+        }
+    </style>
+</head>
+<body>
+    <div class="bandera">
+        <div class="franja franjaarriba"></div>
+        <div class="franja franjamedio"></div>
+        <div class="franja franjaabajo"></div>
+    </div>
+</body>
+</html>
