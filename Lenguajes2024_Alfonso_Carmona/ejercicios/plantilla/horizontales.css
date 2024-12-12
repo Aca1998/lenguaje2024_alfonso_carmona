@@ -1,0 +1,28 @@
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+
+        .bandera1 {
+            display: flex;
+            flex-direction: column; /* Franjas horizontales */
+            height: 200px;
+            width: 300px;
+            border: 2px solid black;
+        }
+
+        .rojo {
+            background-color: #AA151B; /* Color rojo de la bandera */
+            flex: 1; /* Las franjas rojas son más pequeñas */
+        }
+
+        .amarillo {
+            background-color: #F1BF00; /* Color amarillo de la bandera */
+            flex: 2; /* La franja amarilla ocupa el doble del espacio */
+        }
+ 

@@ -53,6 +53,13 @@ footer{
     bottom:0;
     width: 100%;
 }
+.bandera {
+    box-sizing: content-box;
+    width: 250px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 0;
+}
 
 
 

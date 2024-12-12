@@ -1,0 +1,14 @@
+#noruega {
+    
+    background: 
+    linear-gradient(to right, #ba0c2f 0%, #ba0c2f 30%, #ffffff 30%, #ffffff 37%, #00205b 37%, #00205b 44%, #ffffff 44%, #ffffff 50%, #ba0c2f 50%, #ba0c2f 100%),
+    linear-gradient(to bottom, transparent 0%, transparent 30%, #ffffff 30%, #ffffff 37%, #00205b 37%, #00205b 44%, #ffffff 44%, #ffffff 50%, transparent 50%, transparent 100%);
+  background-size: 100% 100%;
+}
+
+#inlaterra{
+    background: 
+    linear-gradient(to right, white 0%, white 40%, #cf142b 40%, #cf142b 60%, white 60%, white 100%),
+    linear-gradient(to bottom, white 0%, white 40%, #cf142b 40%, #cf142b 60%, white 60%, white 100%);
+  background-size: 100% 100%;
+}
