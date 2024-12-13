@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.tablero {
+    display: flex;
+    flex-direction: column;
+}
+
+.fila {
+    display: flex;
+}
+
+.celda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+.blanco {
+    background-color: burlywood;
+}
+
+.negro {
+    background-color: rgba(63, 25, 0, 0.877);
+}
+
+.fila .celda {
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+}
+
+.celda img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.esquina {
+    background-color: #ffffff;
+}
