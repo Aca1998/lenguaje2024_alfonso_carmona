@@ -1,0 +1,7 @@
+<!ELEMENT catalogo (libro+)> 
+<!ELEMENT libro (titulo, autor, anioPublicacion, editorial, genero)> 
+<!ELEMENT titulo (#PCDATA)> 
+<!ELEMENT autor (#PCDATA)> 
+<!ELEMENT anioPublicacion (#PCDATA)> 
+<!ELEMENT editorial (#PCDATA)> 
+<!ELEMENT genero (#PCDATA)>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<catalogo>
+    <libro>
+        <titulo>El Quijote</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <anioPublicacion>1605</anioPublicacion>
+        <editorial>Francisco de Robles</editorial>
+        <genero>Novela</genero>
+    </libro>
+    <libro>
+        <titulo>Cien Años de Soledad</titulo>
+        <autor>Gabriel García Márquez</autor>
+        <anioPublicacion>1967</anioPublicacion>
+        <editorial>Editorial Sudamericana</editorial>
+        <genero>Realismo mágico</genero>
+    </libro>
+    <libro>
+        <titulo>1984</titulo>
+        <autor>George Orwell</autor>
+        <anioPublicacion>1949</anioPublicacion>
+        <editorial>Secker &amp; Warburg</editorial>
+        <genero>Distopía</genero>
+    </libro>
+    <libro>
+        <titulo>La Odisea</titulo>
+        <autor>Homero</autor>
+        <anioPublicacion>-800</anioPublicacion>
+        <editorial>Desconocida</editorial>
+        <genero>Poema épico</genero>
+    </libro>
+    <libro>
+        <titulo>Orgullo y Prejuicio</titulo>
+        <autor>Jane Austen</autor>
+        <anioPublicacion>1813</anioPublicacion>
+        <editorial>T. Egerton</editorial>
+        <genero>Romance</genero>
+    </libro>
+</catalogo>
