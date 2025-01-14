@@ -1,39 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!DOCTYPE catalogo SYSTEM "ej01-catalogo.dtd">
 <catalogo>
+    <!-- primer libro -->
     <libro>
+        <id>001</id>
         <titulo>El Quijote</titulo>
         <autor>Miguel de Cervantes</autor>
         <anioPublicacion>1605</anioPublicacion>
-        <editorial>Francisco de Robles</editorial>
         <genero>Novela</genero>
+        <precio moneda="EUR">15.99</precio>
+        <disponibilidad>Disponible</disponibilidad>
     </libro>
+    <!-- segundo libro -->
     <libro>
+        <id>002</id>
         <titulo>Cien Años de Soledad</titulo>
         <autor>Gabriel García Márquez</autor>
         <anioPublicacion>1967</anioPublicacion>
-        <editorial>Editorial Sudamericana</editorial>
         <genero>Realismo mágico</genero>
+        <precio moneda="EUR">15.99</precio>
+        <disponibilidad>Disponible</disponibilidad>
     </libro>
+    <!-- tercer libro -->
     <libro>
+        <id>003</id>
         <titulo>1984</titulo>
         <autor>George Orwell</autor>
         <anioPublicacion>1949</anioPublicacion>
-        <editorial>Secker &amp; Warburg</editorial>
         <genero>Distopía</genero>
+       <precio moneda="EUR">15.99</precio>
+        <disponibilidad>Disponible</disponibilidad>
     </libro>
+    <!-- cuarto libro -->
     <libro>
+        <id>004</id>
         <titulo>La Odisea</titulo>
         <autor>Homero</autor>
         <anioPublicacion>-800</anioPublicacion>
-        <editorial>Desconocida</editorial>
         <genero>Poema épico</genero>
+       <precio moneda="EUR">15.99</precio>
+        <disponibilidad>Disponible</disponibilidad>
     </libro>
+    <!-- quinto libro -->
     <libro>
+        <id>005</id>
         <titulo>Orgullo y Prejuicio</titulo>
         <autor>Jane Austen</autor>
         <anioPublicacion>1813</anioPublicacion>
-        <editorial>T. Egerton</editorial>
         <genero>Romance</genero>
+        <precio moneda="EUR">15.99</precio>
+        <disponibilidad>Disponible</disponibilidad>
     </libro>
 </catalogo>
