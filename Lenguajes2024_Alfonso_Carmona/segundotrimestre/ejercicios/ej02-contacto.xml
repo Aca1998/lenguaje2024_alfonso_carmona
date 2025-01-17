@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contacto SYSTEM "ej02-contacto.dtd">
+<agenda>
+    <!-- primer contacto -->
+    <contacto>
+        <nombre>Rosario Prieto</nombre>
+        <numero>674908254</numero>
+        <email>rosarioprieto@gmail.com</email>
+         <direccion>
+        <ciudad>Malaga</ciudad>
+        <codigoPostal>14191</codigoPostal>
+         </direccion>
+    </contacto>
+        
+    <!-- segundo contacto -->
+    <contacto>
+        <nombre>Antonio Perez</nombre>
+        <numero>689345125</numero>
+        <email>antonioperez@gmail.com</email>
+         <direccion>
+        <ciudad>Barcelona</ciudad>
+        <codigoPostal>14120</codigoPostal>
+         </direccion>
+    </contacto>
+    <!-- tercer contacto -->
+    <contacto>
+        <nombre>Jesus Rodriguez</nombre>
+        <numero>610234580</numero>
+        <email>jesusrodriguez@gmail.com</email>
+         <direccion>
+        <ciudad>Almeria</ciudad>
+        <codigoPostal>14100</codigoPostal>
+         </direccion>
+    </agenda>
+    

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "ej03-menu.dtd">
+<menu>
+    <item>
+        <nombre>Ensalada de la casa</nombre>
+        <descripcion>Lechuga fresca, pollo a la plancha, queso cheddar.</descripcion>
+        <precio moneda="EUR">8.50</precio>
+        <categoria>1º Plato</categoria>
+    </item>
+    <item>
+        <nombre>Hamburguesa</nombre>
+        <descripcion>Hamburguesa con carne 100% vacuno, lechuga, tomate, cebolla y queso cheddar.</descripcion>
+        <precio moneda="EUR">12.00</precio>
+        <categoria>2º Plato</categoria>
+    </item>
+    <item>
+        <nombre>Tarta de Queso</nombre>
+        <descripcion>Tarta de queso con base de galleta y mermelada.</descripcion>
+        <precio moneda="EUR">4.00</precio>
+        <categoria>Postre</categoria>
+    </item>
+    <item>
+        <nombre>Café</nombre>
+        <descripcion>Cortado, con leche, solo.</descripcion>
+        <precio moneda="EUR">1.50</precio>
+        <categoria>Otro postre a elegir</categoria>
+    </item>
+</menu>
