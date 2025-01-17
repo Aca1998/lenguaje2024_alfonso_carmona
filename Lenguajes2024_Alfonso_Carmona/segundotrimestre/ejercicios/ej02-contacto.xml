@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE contacto SYSTEM "ej02-contacto.dtd">
+<!DOCTYPE agenda SYSTEM "ej02-contacto.dtd">
 <agenda>
     <!-- primer contacto -->
     <contacto>
@@ -31,5 +31,6 @@
         <ciudad>Almeria</ciudad>
         <codigoPostal>14100</codigoPostal>
          </direccion>
+         </contacto>
     </agenda>
     
