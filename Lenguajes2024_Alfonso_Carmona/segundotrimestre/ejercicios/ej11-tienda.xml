@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tienda SYSTEM "ej11-tienda.dtd">
+<tienda>
+    <producto>
+        <id>001</id>
+        <nombre>Iphone13</nombre>
+        <descripcion>Smartphone con gran rendimiento y cámara de calidad.</descripcion>
+        <categoria>Electronica</categoria>
+        <precio moneda="EUR">12.00</precio>
+        <stock>25</stock>
+        <caracteristicas>
+            <caracteristica>Pantalla AMOLED de 6.7"</caracteristica>
+            <caracteristica>Cámara principal de 108 MP</caracteristica>
+            <caracteristica>Batería de 5000 mAh</caracteristica>
+        </caracteristicas>
+    </producto>
+</tienda>

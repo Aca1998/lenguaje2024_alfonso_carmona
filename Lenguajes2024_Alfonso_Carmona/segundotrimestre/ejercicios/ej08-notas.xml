@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE notas SYSTEM "ej08-notas.dtd">
+<!DOCTYPE notas SYSTEM "./ej08-notas.dtd">
 <notas>
 <alumno>
     <nombre>Antonio Carmona</nombre>

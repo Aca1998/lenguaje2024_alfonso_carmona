@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE estacion_meteorologica SYSTEM ">
+<!DOCTYPE estacion_meteorologica SYSTEM "ej10-estacion.dtd">
 <estacion_meteorologica>
     <ubicacion>
         <ciudad>Madrid</ciudad>
