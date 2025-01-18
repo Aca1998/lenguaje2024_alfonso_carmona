@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tarjeta SYSTEM "ej05-tarjeta.dtd">
+<tarjeta>
+    <datos>
+        <numeroTarjeta>654138186548123</numeroTarjeta>
+        <titular>Antonio Perez Martin</titular>
+        <fecha_vencimiento>2027-07-12</fecha_vencimiento>
+        <tipo_tarjeta>Credito</tipo_tarjeta>
+        <entidad>Caja sur</entidad>
+        <cvc>123</cvc>
+    </datos>
+</tarjeta>
