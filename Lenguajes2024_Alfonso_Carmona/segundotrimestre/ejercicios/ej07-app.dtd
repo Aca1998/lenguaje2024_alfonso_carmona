@@ -1,0 +1,21 @@
+<!ELEMENT app (informacion, base_datos, configuracion_usuario)>
+
+<!ELEMENT informacion (nombre, version, autor)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+
+<!ELEMENT base_datos (host, puerto, usuario, contrasena, nombre_base_datos)>
+<!ELEMENT host (#PCDATA)>
+<!ELEMENT puerto (#PCDATA)>
+<!ELEMENT usuario (#PCDATA)>
+<!ELEMENT contrasena (#PCDATA)>
+<!ELEMENT nombre_base_datos (#PCDATA)>
+
+<!ELEMENT configuracion_usuario (tema, idioma, preferencias)>
+<!ELEMENT tema (#PCDATA)>
+<!ELEMENT idioma (#PCDATA)>
+<!ELEMENT preferencias (notificaciones, autoguardado, fondo_pantalla)>
+<!ELEMENT notificaciones (#PCDATA)>
+<!ELEMENT autoguardado (#PCDATA)>
+<!ELEMENT fondo_pantalla (#PCDATA)>

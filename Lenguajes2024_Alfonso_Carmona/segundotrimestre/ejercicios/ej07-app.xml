@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuracion SYSTEM "ej07-app.dtd">
+<app>
+    <informacion>
+        <nombre>app fit</nombre>
+        <version>1.0</version>
+        <autor>Alfonso Carmona</autor>
+    </informacion>
+    <base_datos>
+        <host>localhost</host>
+        <puerto>3306</puerto>
+        <usuario>admin</usuario>
+        <contrasena>1234</contrasena>
+        <nombre_base_datos>base de datos free</nombre_base_datos>
+    </base_datos>
+    <configuracion_usuario>
+        <tema>oscuro</tema>
+        <idioma>español</idioma>
+        <preferencias>
+            <notificaciones>activadas</notificaciones>
+            <autoguardado>desactivado</autoguardado>
+            <fondo_pantalla>negro oscuro</fondo_pantalla>
+        </preferencias>
+    </configuracion_usuario>
+</app>
+    
+    
+    
+    
+  
