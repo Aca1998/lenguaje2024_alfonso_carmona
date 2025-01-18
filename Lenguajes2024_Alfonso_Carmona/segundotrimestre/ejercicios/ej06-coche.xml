@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ficha_tecnica SYSTEM "ej06-coche.dtd">
+
+<ficha_tecnica>
+    <marca>Seat</marca>
+    <modelo>Toledo</modelo>
+    <ano>2006</ano>
+    <matricula>2345FBP</matricula>
+    <combustible>Gasolina</combustible>
+    <potencia>120 CV</potencia>
+</ficha_tecnica>
