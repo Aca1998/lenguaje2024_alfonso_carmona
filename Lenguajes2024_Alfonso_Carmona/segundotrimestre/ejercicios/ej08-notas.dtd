@@ -1,4 +1,4 @@
-<!ELEMENT notas (alumno)>
+<!ELEMENT notas (alumno+)>
 <!ELEMENT alumno (nombre, curso, asignatura+)>
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT curso (#PCDATA)>

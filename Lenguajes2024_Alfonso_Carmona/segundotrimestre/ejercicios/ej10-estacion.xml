@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE estacion_meteorologica SYSTEM ">
+<estacion_meteorologica>
+    <ubicacion>
+        <ciudad>Madrid</ciudad>
+        <pais>España</pais>
+        <coordenadas>
+            <latitud>40.4168</latitud>
+            <longitud>-3.7038</longitud>
+        </coordenadas>
+    </ubicacion>
+    <registro>
+        <fecha>2025-01-18</fecha>
+        <hora>14:30</hora>
+        <temperatura>15.2</temperatura>
+        <humedad>65</humedad>
+        <presion>1015</presion>
+        <viento>
+            <direccion>Norte</direccion>
+            <velocidad>12.5</velocidad>
+        </viento>
+        <lluvia>0.0</lluvia>
+    </registro>
+</estacion_meteorologica>
