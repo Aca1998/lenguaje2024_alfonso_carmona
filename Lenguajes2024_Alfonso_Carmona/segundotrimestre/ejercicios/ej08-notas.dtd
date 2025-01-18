@@ -1,0 +1,8 @@
+<!ELEMENT notas (alumno+)>
+<!ELEMENT alumno (nombre, curso, asignatura+)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT curso (#PCDATA)>
+<!ELEMENT asignatura (nombre, notas)>
+<!ELEMENT notas (trimestre+)>
+<!ELEMENT trimestre (#PCDATA)>
+<!ATTLIST trimestre numero CDATA #REQUIRED>

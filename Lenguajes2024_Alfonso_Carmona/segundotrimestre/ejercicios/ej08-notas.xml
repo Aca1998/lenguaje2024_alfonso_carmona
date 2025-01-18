@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notas SYSTEM "ej08-notas.dtd">
+<notas>
+<alumno>
+    <nombre>Antonio Carmona</nombre>
+    <curso>1º DAW</curso>
+     <asignatura>
+    <nombre>Programacion</nombre>
+<notas>
+ <trimestre numero="1">8.5</trimestre>
+ <trimestre numero="2">9.0</trimestre>
+ <trimestre numero="3">7.5</trimestre>
+ </notas>
+ </asignatura>
+ <asignatura>
+ <nombre>Sistemas Informaticos</nombre>
+ <notas>
+ <trimestre numero="1">6.5</trimestre>
+ <trimestre numero="2">8.0</trimestre>
+ <trimestre numero="3">6.0</trimestre>
+   </notas>
+    </asignatura>
+    </alumno>
+</notas>

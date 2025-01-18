@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuracion SYSTEM "ej07-app.dtd">
+<!DOCTYPE app SYSTEM "ej07-app.dtd">
 <app>
     <informacion>
         <nombre>app fit</nombre>
