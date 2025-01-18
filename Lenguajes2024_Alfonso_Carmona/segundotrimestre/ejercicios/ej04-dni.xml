@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dni SYSTEM "ej04-dni.dtd">
+ <dni>
+<datos>
+    <nombre>Alberto</nombre>
+    <apellidos>Conrado Zafra</apellidos>
+    <dni_numero>12345678T</dni_numero>
+    <fecha_nacimiento>1998-07-15</fecha_nacimiento>
+    <nacionalidad>Española</nacionalidad>
+     <direccion>
+        <calle>Calle las Moras</calle>
+        <ciudad>Madrid</ciudad>
+        <codigo_postal>14100</codigo_postal>
+    </direccion>
+    <sexo>Hombre</sexo>
+    <fecha_emision>2022-02-14</fecha_emision>
+    <fecha_caducidad>2034-10-29</fecha_caducidad>
+</datos>
+</dni>
