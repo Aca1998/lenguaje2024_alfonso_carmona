@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pokemon SYSTEM "ej09-poke.dtd">
+<pokemon>
+<nombre>Charmander</nombre>
+<numeroPokedex>003</numeroPokedex>
+<imagen>imagen de charmander </imagen>
+<descripcion></descripcion>
+<tipo>Fuego</tipo>
+<genero>masculino</genero>
+<estado>
+<habilidades>Lanzallamas,Giro fuego, Ascuas y Llamarada</habilidades>
+<destreza>8</destreza>
+<nivel>35</nivel>
+<fuerza>80</fuerza>
+<faseEvolucion>2</faseEvolucion>
+<puntosVida>120</puntosVida>
+</estado>
+</pokemon>
+
+    
