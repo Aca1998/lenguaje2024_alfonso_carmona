@@ -19,3 +19,5 @@
 <!ELEMENT notificaciones (#PCDATA)>
 <!ELEMENT autoguardado (#PCDATA)>
 <!ELEMENT fondo_pantalla (#PCDATA)>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

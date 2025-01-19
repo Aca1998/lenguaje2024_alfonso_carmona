@@ -9,3 +9,5 @@
 <!ELEMENT disponibilidad (stock, vendidos)>
 <!ELEMENT stock (#PCDATA)>
 <!ELEMENT vendidos (#PCDATA)>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

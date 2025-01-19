@@ -6,3 +6,5 @@
 <!ELEMENT direccion (ciudad, codigoPostal)>
 <!ELEMENT ciudad (#PCDATA)>
 <!ELEMENT codigoPostal (#PCDATA)>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

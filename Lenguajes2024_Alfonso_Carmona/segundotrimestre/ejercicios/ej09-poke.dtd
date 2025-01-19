@@ -15,3 +15,5 @@
 
 <!ATTLIST tipo 
     value (agua | fuego | tierra | planta) #IMPLIED>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

@@ -8,3 +8,5 @@
 <!ELEMENT precio (#PCDATA)>
 <!ATTLIST precio moneda CDATA #REQUIRED>
 <!ELEMENT disponibilidad (#PCDATA)>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

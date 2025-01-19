@@ -9,3 +9,5 @@
 <!ELEMENT stock (#PCDATA)>
 <!ELEMENT caracteristicas (caracteristica+)>
 <!ELEMENT caracteristica (#PCDATA)>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

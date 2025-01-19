@@ -7,3 +7,5 @@
 <!ELEMENT notas (trimestre+)>
 <!ELEMENT trimestre (#PCDATA)>
 <!ATTLIST trimestre numero CDATA #REQUIRED>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

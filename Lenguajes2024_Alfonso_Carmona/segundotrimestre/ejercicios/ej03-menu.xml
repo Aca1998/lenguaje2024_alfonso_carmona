@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE menu SYSTEM "ej03-menu.dtd">
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->
 <menu>
     <item>
         <nombre>Ensalada de la casa</nombre>

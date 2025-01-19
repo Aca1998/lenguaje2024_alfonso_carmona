@@ -12,3 +12,5 @@
 <!ELEMENT sexo (#PCDATA)>
 <!ELEMENT fecha_emision (#PCDATA)>
 <!ELEMENT fecha_caducidad (#PCDATA)>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

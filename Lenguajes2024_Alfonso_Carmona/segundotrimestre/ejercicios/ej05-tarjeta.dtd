@@ -6,3 +6,5 @@
 <!ELEMENT tipo_tarjeta (#PCDATA)>
 <!ELEMENT entidad (#PCDATA)>
 <!ELEMENT cvc (#PCDATA)>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->

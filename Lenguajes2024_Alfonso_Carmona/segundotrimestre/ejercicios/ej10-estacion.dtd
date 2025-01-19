@@ -15,3 +15,5 @@
 <!ELEMENT direccion (#PCDATA)>
 <!ELEMENT velocidad (#PCDATA)>
 <!ELEMENT lluvia (#PCDATA)>
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->
