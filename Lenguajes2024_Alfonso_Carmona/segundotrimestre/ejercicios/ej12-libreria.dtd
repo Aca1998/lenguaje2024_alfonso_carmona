@@ -1,0 +1,11 @@
+<!ELEMENT libreria (libro+)>
+<!ELEMENT libro (isbn, titulo, autor, categoria, precio, disponibilidad)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT categoria (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio moneda CDATA #REQUIRED>
+<!ELEMENT disponibilidad (stock, vendidos)>
+<!ELEMENT stock (#PCDATA)>
+<!ELEMENT vendidos (#PCDATA)>
