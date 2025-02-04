@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen tema 13-14 Transformaciones XSL y XSLT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header,
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Resumen XSL y XSLT</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>¿Para que sirve Xpath?</h2>
+            <h3>TEMA 12</h3>
+            <p>Sirve para extraer datos , para tener acceso a todos llos nodos de XML, para visualizar elementos
+                y para hacer calculos.</p>
+
+        </section>
+
+        <section>
+            <h2>Tipos de Nodos</h2>
+            <ul>
+                <li>Raiz, Descendientes, Ascendendtes, Hermanos.</li>
+                <li>Raiz: El nodo raiz siempre es /.</li>
+                <li>Elemento, Atributo, Texto.</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Notas sobre el eje Xpath</h2>
+
+            <li>nombre_nodo: Seleciona todos los nodos con ese nombre</li>
+            <li>/ : Selecion de nodos desde el nodo raiz</li>
+            <li>// : Seleciona nodos desde el nodo actual </li>
+            <li>. : Seleciona el nodo actual</li>
+            <li>.. : Seleciona el padre del nodo actual</li>
+            <li>@ : Seleciona atributos</li>
+            <li>| : Permite indicar varios caminos </li>
+        </section>
+        <section>
+            <h2>Sintaxis Xpath</h2>
+            <p>Una expresion Xpath es una cadena de texto que localiza nodos de un arbol XML</p>
+            <ul><strong>Ejemplo</strong></ul>
+            <li>Selecionar elementos o atributos.</li>
+            <li>Predicado: Aplicando condiciones al eje.</li>
+            <li>Seleccion de nodos: indica el resultado final.</li>
+        </section>
+        <section>
+            <h2>Notas sobre seleccion de nodos</h2>
+            <ul>
+                <li>node (): Seleciona todos los hijos (Elementos o texto).</li>
+                <li>text () : Seleciona unicamente el texto contenido y no muestra las etiquetas.</li>
+                <li>* : Seleciona todos los hijos (solo elementos).</li>
+                <li>@* : Seleciona todos los atributos del nodo.</li>
+            </ul>
+
+        </section>
+        <section>
+            <h2><strong> Formatos de intercambios de datos</strong></h2>
+            <ul>JSON : JavaScript Object Notation</ul>
+            <li>Formato ligero para el intercambio de datos.</li>
+            <li>Basado en pares clave-valor y arrays.</li>
+            <li>La extensión es: <strong>.json</strong></li>
+            <li>Compatible con la mayoría de lenguajes de programación.</li>
+        </section>
+        <section>
+            <h2><strong> Formatos de intercambios de datos</strong></h2>
+            <ul>CSV: Comma-Separated Values</ul>
+            <li>Formato tabular donde los datos están separados por comas.</li>
+            <li>Usado para almacenar datos simples en texto plano.</li>
+            <li>La extensión es: <strong>.csv</strong></li>
+            <li>Sencillo: Fácil de crear y leer.</li>
+        </section>
+        <section>
+            <h2><strong> Formatos de intercambios de datos</strong></h2>
+            <ul>YAML: YAML Ain't Markup Language</ul>
+            <li>Utiliza indentación para organizar los datos jerárquicamente. </li>
+            <li>Más fácil de leer y escribir que XML o JSON.</li>
+            <li>La extensión es: <strong>.yml o yaml</strong></li>
+            <li>Flexible: Permite representar estructuras de datos complejas.</li>
+        </section>
+        <section>
+            
+            <ul>
+                <li><a href="../tema10.xml/web_resumen.html">VOLVER ATRÁS</a></li>
+                <li><a href="../tema11.xml/web_resumen11.html">Resumen tema 11 XPATH</a></li>
+                <li><a href="../index.html">VOLVER AL INDEX</a></li>
+                
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Alfonso Carmona - Trabajo de clase</p>
+    </footer>
+</body>
+
+</html>
