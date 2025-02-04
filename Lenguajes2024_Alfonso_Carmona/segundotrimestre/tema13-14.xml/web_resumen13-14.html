@@ -58,91 +58,77 @@
 
     <main>
         <section>
-            <h2>¿Para que sirve Xpath?</h2>
+            <h2>¿Qué es XSLT</h2>
             <h3>TEMA 12</h3>
-            <p>Sirve para extraer datos , para tener acceso a todos llos nodos de XML, para visualizar elementos
-                y para hacer calculos.</p>
-
+            <p>Es un lenguaje declarativo , con iteracines, variables y condicionales, 
+                Son documentos basado en patrones y reglas,
+                Son documentos XML pero bien formados,
+                Tambien realizan una transformacion visual y estructural, 
+                Transforman XML en otro documento.</p>
         </section>
+                
+
 
         <section>
-            <h2>Tipos de Nodos</h2>
+            <h2>Proceso de transformacion</h2>
             <ul>
-                <li>Raiz, Descendientes, Ascendendtes, Hermanos.</li>
-                <li>Raiz: El nodo raiz siempre es /.</li>
-                <li>Elemento, Atributo, Texto.</li>
+                <li>El procesador analiza el documento y construye el arbol del documento</li>
+                <li>El procesador recorre el arbol del documento desde el nodo raiz</li>
+                <li>En cada nodo recorrido, el procesador aplica o no </li>
+                <li>Cuando el procesador ha recorrido el arbol, se ha terminado la transformacion</li>
             </ul>
         </section>
 
 
         <section>
-            <h2>Notas sobre el eje Xpath</h2>
+            <h2>Elementos XSLT</h2>
 
-            <li>nombre_nodo: Seleciona todos los nodos con ese nombre</li>
-            <li>/ : Selecion de nodos desde el nodo raiz</li>
-            <li>// : Seleciona nodos desde el nodo actual </li>
-            <li>. : Seleciona el nodo actual</li>
-            <li>.. : Seleciona el padre del nodo actual</li>
-            <li>@ : Seleciona atributos</li>
-            <li>| : Permite indicar varios caminos </li>
+            <li>Herramientas de procesamiento</li>
+            <li>Oxigen XML Editor</li>
+            <li>Altova Editor XSLT</li>
+            <li>Saxon</li>
+            <li>Xalan</li>
+            <li>Online XSLT Test Tool</li>
         </section>
-        <section>
-            <h2>Sintaxis Xpath</h2>
-            <p>Una expresion Xpath es una cadena de texto que localiza nodos de un arbol XML</p>
-            <ul><strong>Ejemplo</strong></ul>
-            <li>Selecionar elementos o atributos.</li>
-            <li>Predicado: Aplicando condiciones al eje.</li>
-            <li>Seleccion de nodos: indica el resultado final.</li>
-        </section>
-        <section>
-            <h2>Notas sobre seleccion de nodos</h2>
-            <ul>
-                <li>node (): Seleciona todos los hijos (Elementos o texto).</li>
-                <li>text () : Seleciona unicamente el texto contenido y no muestra las etiquetas.</li>
-                <li>* : Seleciona todos los hijos (solo elementos).</li>
-                <li>@* : Seleciona todos los atributos del nodo.</li>
-            </ul>
+   
 
-        </section>
         <section>
-            <h2><strong> Formatos de intercambios de datos</strong></h2>
-            <ul>JSON : JavaScript Object Notation</ul>
-            <li>Formato ligero para el intercambio de datos.</li>
-            <li>Basado en pares clave-valor y arrays.</li>
-            <li>La extensión es: <strong>.json</strong></li>
-            <li>Compatible con la mayoría de lenguajes de programación.</li>
-        </section>
-        <section>
-            <h2><strong> Formatos de intercambios de datos</strong></h2>
-            <ul>CSV: Comma-Separated Values</ul>
-            <li>Formato tabular donde los datos están separados por comas.</li>
-            <li>Usado para almacenar datos simples en texto plano.</li>
-            <li>La extensión es: <strong>.csv</strong></li>
-            <li>Sencillo: Fácil de crear y leer.</li>
-        </section>
-        <section>
-            <h2><strong> Formatos de intercambios de datos</strong></h2>
-            <ul>YAML: YAML Ain't Markup Language</ul>
-            <li>Utiliza indentación para organizar los datos jerárquicamente. </li>
-            <li>Más fácil de leer y escribir que XML o JSON.</li>
-            <li>La extensión es: <strong>.yml o yaml</strong></li>
-            <li>Flexible: Permite representar estructuras de datos complejas.</li>
-        </section>
-        <section>
+            <h2>¿Qué es el XSL-FO?</h2>
             
+            <li>Son transformaciones que obtiene un archivo diferentes a HTML o XML</li>
+            <li>Se especifica como queremos que se formateen los datos de origen XML</li>
+            <li>Algunos formatos como : PDF, SVG, RTF</li>
+        </section>
+
+         
+           
+        <section>
+            <h2>Transformaciones XSLT I</h2>
+            <ul>
+                <h2><strong>Algun ejemplo con inclusion de etiquetas HTML</strong></h2>
+                <li>xsl_apply-templates se aplica a la plantilla</li>
+                <li>xsl:value-of Extrae el contenido del nodo</li>
+                <li>xsl:if Condicional</li>
+              
+            </ul>
+
+        </section>
+        <section>
             <ul>
                 <li><a href="../tema10.xml/web_resumen.html">VOLVER ATRÁS</a></li>
                 <li><a href="../tema11.xml/web_resumen11.html">Resumen tema 11 XPATH</a></li>
                 <li><a href="../index.html">VOLVER AL INDEX</a></li>
-                
             </ul>
         </section>
-
     </main>
-
+    
     <footer>
-        <p>Alfonso Carmona - Trabajo de clase</p>
+        <p>Alfonso Carmona - Mi Repositorio</p>
     </footer>
 </body>
-
 </html>
+       
+            
+                
+
+
