@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->
+
+    <xs:element name="estacion_meteorologica">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ubicacion">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ciudad" type="xs:string"/>
+                            <xs:element name="pais" type="xs:string"/>
+                            <xs:element name="coordenadas">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="latitud" type="xs:decimal"/>
+                                        <xs:element name="longitud" type="xs:decimal"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="registro">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="fecha" type="xs:date"/>
+                            <xs:element name="hora" type="xs:string"/>
+                            <xs:element name="temperatura" type="xs:decimal"/>
+                            <xs:element name="humedad" type="xs:int"/>
+                            <xs:element name="presion" type="xs:int"/>
+                            <xs:element name="viento">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="direccion" type="xs:string"/>
+                                        <xs:element name="velocidad" type="xs:decimal"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="lluvia" type="xs:decimal"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

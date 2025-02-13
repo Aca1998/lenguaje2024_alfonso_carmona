@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->
+
+
 <?xml-stylesheet href="concesionario1.xslt" type="text/xsl"?> 
 <?xml-model href="concesionario1.xslt"?>
 <concesionario>

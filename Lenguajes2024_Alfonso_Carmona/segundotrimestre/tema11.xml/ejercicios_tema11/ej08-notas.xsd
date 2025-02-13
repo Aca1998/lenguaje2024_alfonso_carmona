@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Nombre de autor: Alfonso Carmona Aguayo  -->
+
+    <xs:element name="notas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="alumno">
+             <xs:complexType>
+                 <xs:sequence>
+                 <xs:element name="nombre" type="xs:string" />
+                  <xs:element name="curso" type="xs:string" />
+                 <xs:element name="asignatura" maxOccurs="unbounded">
+                  <xs:complexType>
+                     <xs:sequence>
+                     <xs:element name="nombre" type="xs:string" />
+                     <xs:element name="notas">
+                    <xs:complexType>
+                     <xs:sequence>
+                     <xs:element name="trimestre" maxOccurs="3">
+                     <xs:complexType>
+                     <xs:simpleContent>
+                     <xs:extension base="xs:decimal">
+                     <xs:attribute name="numero"
+                     type="xs:int" use="required" />
+                     </xs:extension>
+                     </xs:simpleContent>
+                     </xs:complexType>
+                     </xs:element>
+                     </xs:sequence>
+                    </xs:complexType>
+                    </xs:element>
+                    </xs:sequence>
+                    </xs:complexType>
+                    </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
