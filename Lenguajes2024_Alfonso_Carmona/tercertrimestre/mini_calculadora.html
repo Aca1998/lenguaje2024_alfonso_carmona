@@ -1,0 +1,57 @@
+<body>
+  <label>Primer número: <input type="number" id="numero1"></label><br>
+  <label>Segundo número: <input type="number" id="numero2"></label><br>
+  <button onclick="calcular()">Calcular</button><br>
+  <div>La suma es: <span id="suma"></span></div>
+  <div>El producto es: <span id="producto"></span></div>
+  <div>El número mayor es: <span id="mayor"></span></div>
+  <script>
+    // Esta etiqueta contiene el código JavaScript que se ejecutará en el navegador.
+    function calcular() {
+      // Define una función llamada "calcular". Esta función se ejecutará cuando se haga clic en el botón "Calcular".
+      const numero1 = Number(document.getElementById("numero1").value);
+      //
+      // con el getElementById: Obtiene el elemento HTML con el ID "numero1" (el primer campo de número).
+      // con el value: Accede al valor que el usuario ha introducido en ese campo. Este valor inicialmente es una cadena de texto.
+      //  el Number(...) : Convierte la cadena de texto obtenida a un número.
+      // - `const numero1 = ...`: Declara una constante llamada `numero1` y le asigna el valor numérico del primer campo.
+
+      const numero2 = Number(document.getElementById("numero2").value);
+      // Similar a la línea anterior, obtiene el valor del segundo campo de número, lo convierte a número y lo guarda en la constante numero2.
+
+      const suma = numero1 + numero2;
+      // Realiza la operación de suma entre las variables numero1 y numero2, y guarda el resultado en la constante suma.
+
+      const producto = numero1 * numero2;
+      // Realiza la operación de multiplicación entre numero1 y numero2, y guarda el resultado en la constante producto.
+
+      let mayor;
+      // Declara una variable llamada `mayor`. Se usa `let` porque su valor podría cambiar.
+
+      if (numero1 > numero2) {
+        // Comprueba si el valor de numero1 es mayor que el valor de numero2.
+        mayor = numero1;
+        // Si la condición es verdadera, asigna el valor de numero1 a la variable mayor.
+      } else if (numero2 > numero1) {
+        // Si la primera condición es falsa, comprueba si el valor de numero2 es mayor que el valor de numero1.
+        mayor = numero2;
+        // Si esta condición es verdadera, asigna el valor de numero2 a la variable `mayor`.
+      } else {
+        // Si ninguna de las condiciones anteriores es verdadera (es decir, los números son iguales).
+        mayor = "Los números son iguales";
+        // Asigna la cadena de texto "Los números son iguales" a la variable mayor.
+      }
+
+      document.getElementById("suma").textContent = suma;
+      //
+      // con el document.getElementById("suma")`: Obtiene el elemento HTML con el ID "suma" (el sitio donde se mostrará la suma).
+      //  y con el textContent = suma: Establece el contenido de texto de este elemento con el valor de la variable 'suma'.
+
+      document.getElementById("producto").textContent = producto;
+      // Similar a la línea anterior, establece el contenido de texto del `span` con ID "producto" al valor de la variable producto.
+
+      document.getElementById("mayor").textContent = mayor;
+      // Similar a las líneas anteriores, establece el contenido de texto del `span` con ID "mayor" al valor de la variable mayor.
+    }
+  </script>
+</body>
