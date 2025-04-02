@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+    <title>Calculadora Funcional</title>
+</head>
+<body>
+    <!-- Inputs para los números -->
+    <label>Primer número: <input type="number" id="numero1"></label><br>
+    <label>Segundo número: <input type="number" id="numero2"></label><br>
+
+    <!-- Botón para calcular -->
+    <button id="calcularBtn">Calcular</button><br>
+
+    <!-- Resultados -->
+    <div>La suma es: <span id="suma"></span></div>
+    <div>El producto es: <span id="producto"></span></div>
+    <div>El número mayor es: <span id="mayor"></span></div>
+
+    <script>
+        // Función flecha para obtener un número desde un input por su ID
+        const getNumber = (id) => Number(document.getElementById(id).value);
+
+        // Función flecha para mostrar texto en un span
+        const setText = (id, value) => document.getElementById(id).textContent = value;
+
+        // Función principal que se ejecuta al pulsar el botón
+        const calcular = () => {
+            // Obtenemos los dos números
+            const [numero1, numero2] = [getNumber("numero1"), getNumber("numero2")];
+
+            // Objeto con funciones para las operaciones
+            const operaciones = {
+                suma: (a, b) => a + b,
+                producto: (a, b) => a * b,
+                mayor: (a, b) => (a === b ? "Los números son iguales" : Math.max(a, b))
+            };
+
+            // Mostramos los resultados
+            setText("suma", operaciones.suma(numero1, numero2));
+            setText("producto", operaciones.producto(numero1, numero2));
+            setText("mayor", operaciones.mayor(numero1, numero2));
+        };
+
+        // Asociamos el botón al evento click
+        document.getElementById("calcularBtn").addEventListener("click", calcular);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Configuración de codificación estándar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño adaptable -->
+    <title>Calculadora Funcional</title> <!-- Título de la página -->
+</head>
+<body>
+    <!-- Inputs de número -->
+    <label>Primer número: <input type="number" id="numero1"></label><br>
+    <label>Segundo número: <input type="number" id="numero2"></label><br>
+
+    <!-- Botón que ejecuta la función al hacer clic -->
+    <button onclick="calcular()">Calcular</button><br>
+
+    <!-- Salida de resultados -->
+    <div>La suma es: <span id="suma"></span></div>
+    <div>El producto es: <span id="producto"></span></div>
+    <div>El número mayor es: <span id="mayor"></span></div>
+
+    <script>
+        // Función que se ejecuta cuando se hace clic en el botón
+        function calcular() {
+            // Obtenemos los valores desde los inputs y los convertimos a números
+            const numero1 = Number(document.getElementById("numero1").value);
+            const numero2 = Number(document.getElementById("numero2").value);
+
+            // Calculamos la suma y el producto
+            const suma = numero1 + numero2;
+            const producto = numero1 * numero2;
+
+            // Calculamos el mayor o indicamos si son iguales
+            let mayor;
+            if (numero1 > numero2) {
+                mayor = numero1;
+            } else if (numero2 > numero1) {
+                mayor = numero2;
+            } else {
+                mayor = "Los números son iguales";
+            }
+
+            // Mostramos los resultados en pantalla
+            document.getElementById("suma").textContent = suma;
+            document.getElementById("producto").textContent = producto;
+            document.getElementById("mayor").textContent = mayor;
+        }
+    </script>
+</body>
+</html>
