@@ -1,76 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style> table, th, td {   border: 1px solid black;   border-collapse: collapse; } </style>
+    <link rel="stylesheet" href="./styles.css">
 </head>
-<style>
 
-a {
-      display: block;
-      margin: 10px 0;
-      text-decoration: none;
-      color: #007BFF;
-      font-size: 1.2rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-</style>
-<body> <body style=width:1000px ; margin: auto; ></body> 
 <body>
     <div>
         <a href="/index.html">Volver al Index</a>
     </div>
 
     <h2>Calculadora</h2>
-    <table style="width:100%">
-     <table>
-        <tr>
-            <!-- con esto se une celdas y se unen columas  -->
-            <td rowspan="2" colspan="5">0</td>
-         </tr>
-         <tr>
-         </tr>
-        <tr>
-            <td>MC</td>
-            <td>MR</td>
-            <td>MS</td>
-            <td>M+</td>
-            <td>M-</td>
-        </tr>
-        <tr>
-            <td>&#8592</td>
-            <td>CE</td>
-            <td>C</td>
-            <td>&#177</td>
-            <td>&#8730</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>/</td>
-            <td>%</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>*</td>
-            <td>1/%</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>-</td>
-            <td rowspan="2">=</td>
-        </tr>
-        <tr>
-            <td colspan="2">0</td>
-            <td>,</td>
-            <td>+</td>
-           
-        </tr>
-    </table>
+<table id="calculadora">
+    <tr>
+        <td rowspan="2" colspan="5" id="display">0</td>
+    </tr>
+    <tr></tr>
+    <tr>
+        <td id="mc">MC</td>
+        <td id="mr">MR</td>
+        <td id="ms">MS</td>
+        <td id="m-plus">M+</td>
+        <td id="m-minus">M-</td>
+    </tr>
+    <tr>
+        <td id="backspace">&#8592</td>
+        <td id="ce">CE</td>
+        <td id="c">C</td>
+        <td id="plus-minus">&#177</td>
+        <td id="sqrt">&#8730</td>
+    </tr>
+    <tr>
+        <td id="7" class="number">7</td>
+        <td id="8" class="number">8</td>
+        <td id="9" class="number">9</td>
+        <td id="divide">/</td>
+        <td id="percent">%</td>
+    </tr>
+    <tr>
+        <td id="4" class="number">4</td>
+        <td id="5" class="number">5</td>
+        <td id="6" class="number">6</td>
+        <td id="multiply">*</td>
+        <td id="reciprocal">1/%</td>
+    </tr>
+    <tr>
+        <td id="1" class="number">1</td>
+        <td id="2" class="number">2</td>
+        <td id="3" class="number">3</td>
+        <td id="subtract">-</td>
+        <td rowspan="2" id="equals">=</td>
+    </tr>
+    <tr>
+        <td colspan="2" id="0">0</td>
+        <td id="decimal">,</td>
+        <td id="add" class="operator">+</td>
+    </tr>
+</table>
+    <script src="calculadora.js"></script>
         </body>
 </html>
