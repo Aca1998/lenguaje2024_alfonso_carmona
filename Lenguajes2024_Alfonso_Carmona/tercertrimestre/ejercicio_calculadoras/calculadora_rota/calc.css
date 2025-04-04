@@ -1,0 +1,47 @@
+.calculadora {
+  width: 250px;
+  border: 2px solid #666;
+  margin: 0 auto;
+  box-shadow: 0px 0px 8px #444;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+.pantalla {
+  margin-bottom: 10px;
+}
+/* con esto ajustamos el tamaño y ancho de la pantalla */
+#resultado {
+  width: 95%;
+  height: 75px;
+  font-size: 24px;
+  background-color: #a6c5a6;
+  text-align: right;
+  padding-right: 10px;
+  border: 1px solid #999;
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+/* esto es para los botones de la calculadora y el color */
+button {
+  height: 40px;
+  font-size: 18px;
+  border-radius: 4px;
+  border: 1px solid #999;
+  background-color: #797777;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #292828;
+}
+
+/* con esto unimos dos columnas para el = y le ajustamos el color */
+.igual {
+  grid-column: span 2;
+  background-color: #a7a8a7;
+}

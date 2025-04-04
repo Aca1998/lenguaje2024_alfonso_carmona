@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora </title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+
+    header {
+      background-color: #022c58;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .calculadora {
+      width: 250px;
+      border: 2px solid #666;
+      margin: 0 auto;
+      box-shadow: 0px 0px 8px #444;
+      background-color: #ccc;
+      padding: 10px;
+    }
+
+    .pantalla {
+      margin-bottom: 10px;
+    }
+
+    #resultado {
+      width: 95%;
+      height: 75px;
+      font-size: 24px;
+      background-color: #a6c5a6;
+      text-align: right;
+      padding-right: 10px;
+      border: 1px solid #999;
+    }
+
+    .teclado {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+
+    button {
+      height: 40px;
+      font-size: 18px;
+      border-radius: 4px;
+      border: 1px solid #999;
+      background-color: #797777;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #292828;
+    }
+
+    .igual {
+      grid-column: span 2;
+      background-color: #a7a8a7;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Calculadora</h1>
+  </header>
+  <main>
+    <h2>Calculadora</h2>
+    <div class="calculadora">
+      <div class="pantalla">
+        <input type="text" id="resultado" readonly>
+      </div>
+      <div class="teclado">
+        <button onclick="limpiar()">C</button>
+        <button onclick="borrar()">CE</button>
+        <button onclick="operar('+')">+</button>
+        <button onclick="operar('*')">x</button>
+
+        <button onclick="agregarNumero('7')">7</button>
+        <button onclick="agregarNumero('8')">8</button>
+        <button onclick="agregarNumero('9')">9</button>
+        <button onclick="operar('-')">-</button>
+
+        <button onclick="agregarNumero('4')">4</button>
+        <button onclick="agregarNumero('5')">5</button>
+        <button onclick="agregarNumero('6')">6</button>
+        <button onclick="operar('/')">/</button>
+
+        <button onclick="agregarNumero('1')">1</button>
+        <button onclick="agregarNumero('2')">2</button>
+        <button onclick="agregarNumero('3')">3</button>
+        <button onclick="inverso()">1/x</button>
+
+        <button onclick="agregarNumero('0')">0</button>
+        <button onclick="agregarNumero('.')">.</button>
+        <button onclick="operar('raiz')">√</button>
+        <button onclick="cuadrado()">x²</button>
+
+        <button onclick="Binario()">Bin</button>
+        <button onclick="aHex()">Hex</button>
+        <button onclick="calcular()" class="igual">=</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Alfonso Carmona - 3º Trimestre</p>
+  </footer>
+  <script>
+    const pantalla = document.getElementById("resultado");
+
+    function agregarNumero(valor) {
+      pantalla.value += valor;
+    }
+
+    function limpiar() {
+      pantalla.value = "";
+    }
+
+    function borrar() {
+      pantalla.value = pantalla.value.slice(0, -1);
+    }
+
+    function operar(simbolo) {
+      if (simbolo === "raiz") {
+        try {
+          const resultado = Math.sqrt(eval(pantalla.value));
+          pantalla.value = isNaN(resultado) ? "Error" : resultado;
+        } catch {
+          pantalla.value = "Error";
+        }
+      } else {
+        pantalla.value += simbolo;
+      }
+    }
+
+    function inverso() {
+      try {
+        const valor = eval(pantalla.value);
+        if (valor === 0) {
+          pantalla.value = "Error";
+        } else {
+          pantalla.value = 1 / valor;
+        }
+      } catch {
+        pantalla.value = "Error";
+      }
+    }
+
+    function cuadrado() {
+      try {
+        const valor = eval(pantalla.value);
+        pantalla.value = Math.pow(valor, 2);
+      } catch {
+        pantalla.value = "Error";
+      }
+    }
+
+    function aHex() {
+      try {
+        const numero = parseInt(eval(pantalla.value));
+        if (!isNaN(numero)) {
+          pantalla.value = numero.toString(16).toUpperCase();
+        }
+      } catch {
+        pantalla.value = "Error";
+      }
+    }
+
+    function Binario() {
+      try {
+        const numero = parseInt(eval(pantalla.value));
+        if (!isNaN(numero)) {
+          pantalla.value = numero.toString(2);
+        }
+      } catch {
+        pantalla.value = "Error";
+      }
+    }
+
+    function calcular() {
+      try {
+        const resultado = eval(pantalla.value);
+        pantalla.value = resultado;
+      } catch {
+        pantalla.value = "Error";
+      }
+    }
+  </script>
+</body>
+</html>
+
