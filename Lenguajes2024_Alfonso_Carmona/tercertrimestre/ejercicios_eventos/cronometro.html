@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Nombre del autor: Alfonso Carmona Aguayo -->
+    <meta charset="UTF-8">
+    <title>Cronometro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            text-align: center;
+        }
+
+        header,
+        footer {
+            background-color: #022c58;
+            color: white;
+            padding: 1rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .tiempo {
+            font-size: 2rem;
+            color: #007BFF;
+            margin: 1rem 0;
+        }
+
+        .botones button {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #022c58;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .botones button:hover {
+            background-color: #022c58;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Cronómetro</h1>
+    </header>
+
+    <main>
+        <div class="tiempo">
+            <span id="min">00</span> :
+            <span id="seg">00</span> :
+            <span id="mil">000</span>
+        </div>
+        <div class="botones">
+            <button onclick="iniciar()">Iniciar</button>
+            <button onclick="detener()">Detener</button>
+            <button onclick="reiniciar()">Reiniciar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Alfonso Carmona | 3º Trimestre</p>
+    </footer>
+
+    <script>
+        //se van a declarar 3 variables 
+        let milisegundos = 0, segundos = 0, minutos = 0;
+        let intervalo = null;
+
+        function actualizarTiempo() {
+            milisegundos += 10; //cada vez que se ejecuta o le das a inicair se le suma 10 milisegundos
+
+            if (milisegundos >= 1000) {// este if es para cuando los milisegundos lleguen a 1000 se sume 1 segundo 
+                milisegundos = 0;
+                segundos++;//se crea un contandor para ir almacenando los segundos
+            }
+
+            if (segundos >= 60) {//este if es para cuando los segundos lleguen a 60 se reinicie y se sume 1 minuto 
+                segundos = 0;
+                minutos++;//se crea un contandor para ir almacenando los minutos
+            }
+            //esto es para actualizar el contenido , con el .padStar aseguramos que siemore se vean 2 o 3 digitos
+            document.getElementById('mil').textContent = milisegundos.toString().padStart(3, '0');//el toStrinf convierte el numero a texto si no el padstar no funcionaria 
+            document.getElementById('seg').textContent = segundos.toString().padStart(2, '0');
+            document.getElementById('min').textContent = minutos.toString().padStart(2, '0');
+        }//el get elementobyid busca el elemento en el html y con el textContent reemplaza lo que hay dentro del <span> , es decir cambia el contenido
+
+
+        function iniciar() {//iniciamos la funcion iniciar , si sintervalo no esta corriendo se inicia un temporizador 
+            if (!intervalo) {
+                intervalo = setInterval(actualizarTiempo, 10);
+            }
+        }
+
+        function detener() {//usamos el clearInterval para detener el temporizador 
+            clearInterval(intervalo);
+            intervalo = null;//con este null permitimos que se reinicie si pulsamos inciar de nuevo
+        }
+
+        function reiniciar() {//en esta funcion primero llamamos a detener para asegurarnos que se para el cronometro
+            detener();//despues de llamar a detener reiniciamos todas las variablas a 0
+            milisegundos = 0;
+            segundos = 0;
+            minutos = 0;
+            //y con esto actualizamos todo para mostrar ceros en cada variable 
+            document.getElementById('mil').textContent = '000';
+            document.getElementById('seg').textContent = '00';
+            document.getElementById('min').textContent = '00';
+        }
+    </script>
+
+</body>
+
+</html>
