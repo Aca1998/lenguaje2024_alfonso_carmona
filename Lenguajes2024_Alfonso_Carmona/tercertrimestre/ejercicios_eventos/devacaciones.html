@@ -9,6 +9,7 @@
             background-color: #f0f0f0;
             margin: 0;
             text-align: center;
+            
         }
 
         header,
@@ -52,26 +53,42 @@
         }
 
         .destino {
-            width: 120px;
-            height: 100px;
+            width: 160px;
+            height: 160px;
             border: 2px dashed #007BFF;
             padding: 10px;
             background-color: white;
+            position: relative; /* Necesario para centrar el unicornio */
+            overflow: hidden;
+            border-radius: 10px;
         }
 
         .destino img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 10px;
         }
 
         #unicornio {
-            width: 100px;
+            width: 80px;
             cursor: grab;
         }
 
+        /* Clase que centra el unicornio dentro del destino */
+        #unicornio.en-destino {
+            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            height: 50%;
+            
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -80,15 +97,15 @@
 
     <main>
         <p class="tiempo" id="mensaje">Me voy de vacaciones...</p>
-       
+
         <img src="./imagenes_vacaciones/unicornio.png" id="unicornio" draggable="true">
-           
-      <div class="destinos">
+
+        <div class="destinos">
             <div class="destino" data-lugar="la playa">
                 <img src="./imagenes_vacaciones/playa.jpg" alt="Playa">
             </div>
             <div class="destino" data-lugar="el lago">
-                <img src="./imagenes_vacaciones/montaña.jpg" alt="Lago"> 
+                <img src="./imagenes_vacaciones/montaña.jpg" alt="Lago">
             </div>
             <div class="destino" data-lugar="el bosque">
                 <img src="./imagenes_vacaciones/bosque.jpg" alt="Bosque">
@@ -108,12 +125,10 @@
         const destinos = document.querySelectorAll(".destino");
         const mensaje = document.getElementById("mensaje");
 
-        // Drag start
         unicornio.addEventListener("dragstart", () => {
-            unicornio.classList.add("brillo");
+            unicornio.classList.remove("en-destino"); // Quitar clase si vuelve a arrastrarse
         });
 
-        // Drag over y drop
         destinos.forEach(destino => {
             destino.addEventListener("dragover", (e) => {
                 e.preventDefault(); // Necesario para permitir el drop
@@ -122,12 +137,13 @@
             destino.addEventListener("drop", () => {
                 const lugar = destino.getAttribute("data-lugar");
                 mensaje.textContent = `¡Me voy a ${lugar}!`;
+
                 destino.appendChild(unicornio);
+                unicornio.classList.add("en-destino");
 
               
-
                 setTimeout(() => {
-                  unicornio.style.boxShadow = "none";
+                    unicornio.style.boxShadow = "none";
                 }, 800);
             });
         });
