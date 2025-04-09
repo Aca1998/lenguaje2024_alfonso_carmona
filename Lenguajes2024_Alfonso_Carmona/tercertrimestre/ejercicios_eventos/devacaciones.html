@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Destino Vacacional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            text-align: center;
+        }
+
+        header,
+        footer {
+            background-color: #022c58;
+            color: white;
+            padding: 1rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .tiempo {
+            font-size: 2rem;
+            color: #007BFF;
+            margin: 1rem 0;
+        }
+
+        .botones button {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #022c58;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .botones button:hover {
+            background-color: #022c58;
+        }
+
+        .destinos {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .destino {
+            width: 120px;
+            height: 100px;
+            border: 2px dashed #007BFF;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .destino img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #unicornio {
+            width: 100px;
+            cursor: grab;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Destino Vacacional</h1>
+    </header>
+
+    <main>
+        <p class="tiempo" id="mensaje">Me voy de vacaciones...</p>
+       
+        <img src="./imagenes_vacaciones/unicornio.png" id="unicornio" draggable="true">
+           
+      <div class="destinos">
+            <div class="destino" data-lugar="la playa">
+                <img src="./imagenes_vacaciones/playa.jpg" alt="Playa">
+            </div>
+            <div class="destino" data-lugar="el lago">
+                <img src="./imagenes_vacaciones/montaña.jpg" alt="Lago"> 
+            </div>
+            <div class="destino" data-lugar="el bosque">
+                <img src="./imagenes_vacaciones/bosque.jpg" alt="Bosque">
+            </div>
+            <div class="destino" data-lugar="la ciudad">
+                <img src="./imagenes_vacaciones/ciudad.jpg" alt="Ciudad">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Alfonso Carmona 3º Trimestre</p>
+    </footer>
+
+    <script>
+        const unicornio = document.getElementById("unicornio");
+        const destinos = document.querySelectorAll(".destino");
+        const mensaje = document.getElementById("mensaje");
+
+        // Drag start
+        unicornio.addEventListener("dragstart", () => {
+            unicornio.classList.add("brillo");
+        });
+
+        // Drag over y drop
+        destinos.forEach(destino => {
+            destino.addEventListener("dragover", (e) => {
+                e.preventDefault(); // Necesario para permitir el drop
+            });
+
+            destino.addEventListener("drop", () => {
+                const lugar = destino.getAttribute("data-lugar");
+                mensaje.textContent = `¡Me voy a ${lugar}!`;
+                destino.appendChild(unicornio);
+
+                // Efecto de "brillo"
+                unicornio.style.transition = "box-shadow 0.3s ease";
+                unicornio.style.boxShadow = "0 0 20px gold";
+
+                setTimeout(() => {
+                    unicornio.style.boxShadow = "none";
+                }, 800);
+            });
+        });
+    </script>
+
+</body>
+</html>
