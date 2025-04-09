@@ -124,12 +124,10 @@
                 mensaje.textContent = `¡Me voy a ${lugar}!`;
                 destino.appendChild(unicornio);
 
-                // Efecto de "brillo"
-                unicornio.style.transition = "box-shadow 0.3s ease";
-                unicornio.style.boxShadow = "0 0 20px gold";
+              
 
                 setTimeout(() => {
-                    unicornio.style.boxShadow = "none";
+                  unicornio.style.boxShadow = "none";
                 }, 800);
             });
         });
