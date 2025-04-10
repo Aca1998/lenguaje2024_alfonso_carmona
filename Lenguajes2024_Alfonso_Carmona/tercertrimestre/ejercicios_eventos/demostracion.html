@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos: stopPropagation y preventDefault</title>
+  <style>
+    /* Plantilla proporcionada */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      text-align: center;
+    }
+
+    header,
+    footer {
+      background-color: #022c58;
+      color: white;
+      padding: 1rem;
+    }
+
+    main {
+      padding: 2rem;
+      height: 80vh;
+    }
+
+    .tiempo {
+      font-size: 2rem;
+      color: #007BFF;
+      margin: 1rem 0;
+    }
+
+    .botones button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #022c58;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .botones button:hover {
+      background-color: #022c58;
+    }
+
+    /* Estilo extra para este ejercicio */
+    .contenedor {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .padre {
+      border: 2px solid #007BFF;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: #e9f3ff;
+    }
+
+    .hijo {
+      background-color: #66b3ff;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    #enlace {
+      display: block;
+      margin: 1rem 0;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    #resultado {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ejercicio JavaScript</h1>
+  </header>
+
+  <main>
+    <div class="contenedor">
+      <h2>Demostración de <code>stopPropagation()</code></h2>
+
+     <!-- Este div es para el elemento padre y contiene dos hijos -->
+      <div class="padre" id="padre">
+        Padre
+        <br>
+        <!-- este boton hijo detiene la propagacion del evento -->
+        <button class="hijo" id="hijo1">Hijo 1 (con stopPropagation)</button>
+        <!-- este boton de hijo2 permite la propagacion -->
+        <button class="hijo" id="hijo2">Hijo 2 (sin stopPropagation)</button>
+      </div>
+
+      <hr>
+
+      <h2>Demostración de <code>preventDefault()</code></h2>
+
+      <!-- este boton activa o desactiva el comportamiento del enlace -->
+      <div class="botones">
+        <button id="toggle">Desactivar/activar Enlace</button>
+      </div>
+
+      <!-- el enlace -->
+      <a href="https://www.w3schools.com" target="_blank" id="enlace">Ir a W3Schools</a>
+
+      <!-- muestra el mensaje de los resultadosd e los eventos -->
+      <div id="resultado" class="tiempo"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Autor: Alfonso Carmona</p>
+  </footer>
+
+  <script>
+    // estos son los elementos del DOM 
+    const padre = document.getElementById('padre');
+    const hijo1 = document.getElementById('hijo1');
+    const hijo2 = document.getElementById('hijo2');
+    const resultado = document.getElementById('resultado');
+
+    // esto es el evento cuando haces click en el padre 
+    padre.addEventListener('click', () => {
+      console.log('Clic en PADRE');
+      resultado.textContent = 'Se hizo clic en el PADRE';
+    });
+
+    // Hijo 1 con stopPropagation
+    hijo1.addEventListener('click', (e) => {
+      e.stopPropagation(); // Detiene que el clic llegue al padre
+      console.log('Clic en HIJO 1 (con stopPropagation)');
+      resultado.textContent = 'Clic en HIJO 1 (con stopPropagation)';
+    });
+
+    // Hijo 2 sin stopPropagation (propaga el evento)
+    hijo2.addEventListener('click', () => {
+      console.log('Clic en HIJO 2 (sin stopPropagation)');
+      resultado.textContent = 'Clic en HIJO 2 (sin stopPropagation) → también se ejecuta el PADRE';
+    });
+
+    // ELEMENTOS PARA preventDefault
+    const enlace = document.getElementById('enlace');
+    const toggle = document.getElementById('toggle');
+
+    // Estado para activar/desactivar el enlace
+    let desactivado = false;
+
+    // Escucha de clic en el enlace
+    enlace.addEventListener('click', function(e) {
+      if (desactivado) {
+        e.preventDefault(); // Evita que el enlace funcione
+        console.log('El enlace está DESACTIVADO');
+        resultado.textContent = 'El enlace está DESACTIVADO. No se abrió.';
+      } else {
+        console.log('El enlace está ACTIVO');
+        resultado.textContent = 'El enlace está ACTIVO. Se abrirá en una nueva pestaña.';
+      }
+    });
+
+    // Botón que cambia el estado del enlace
+    toggle.addEventListener('click', () => {
+      desactivado = !desactivado; // Alterna entre activado y desactivado
+      console.log(`Enlace ${desactivado ? 'desactivado' : 'activado'}`);
+      resultado.textContent = `Has ${desactivado ? 'desactivado' : 'activado'} el enlace.`;
+    });
+  </script>
+
+</body>
+</html>

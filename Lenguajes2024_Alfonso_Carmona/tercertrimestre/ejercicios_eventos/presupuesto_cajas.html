@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Presupuestos para cajas</title>
+  <style>
+    /* PLANTILLA BASE PROPORCIONADA */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      text-align: center;
+    }
+
+    header,
+    footer {
+      background-color: #022c58;
+      color: white;
+      padding: 1rem;
+    }
+
+    main {
+      padding: 2rem;
+      height: 80vh;
+
+    }
+
+    .tiempo {
+      font-size: 2rem;
+      color: #007BFF;
+      margin: 1rem 0;
+    }
+
+    .botones button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #022c58;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .botones button:hover {
+      background-color: #022c58;
+    }
+
+    /* ESTILO ADICIONAL PARA LA INTERFAZ */
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .seccion {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      min-width: 250px;
+    }
+
+    input, select {
+      width: 90%;
+      padding: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .resultados {
+      background-color: #e6f2ff;
+      text-align: left;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    .resultado-linea {
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Presupuestos para cajas</h1>
+</header>
+
+<main>
+  <div class="contenedor">
+    <!-- Sección de cálculo -->
+    <div class="seccion">
+      <h3>Sección de Cálculo</h3>
+      <input type="number" id="ancho" placeholder="Ancho (cm)">
+      <input type="number" id="alto" placeholder="Alto (cm)">
+      <input type="number" id="largo" placeholder="Largo (cm)">
+      <select id="material">
+        <option value="plastico">Plástico</option>
+        <option value="carton">Cartón</option>
+        <option value="madera">Madera</option>
+      </select>
+      <div class="botones">
+        <button onclick="calcular()">Calcular</button>
+      </div>
+    </div>
+
+    <!-- Sección de configuración -->
+    <div class="seccion">
+      <h3>Sección de Configuración</h3>
+      <input type="number" id="precioBase" placeholder="Precio base por m²" value="1">
+      <input type="number" id="incPlastico" placeholder="Incremento (%) para Plástico" value="20">
+      <input type="number" id="incCarton" placeholder="Incremento (%) para Cartón" value="10">
+      <input type="number" id="incMadera" placeholder="Incremento (%) para Madera" value="50">
+      <input type="number" id="iva" placeholder="IVA (%)" value="10">
+    </div>
+  </div>
+
+  <!-- Resultados -->
+  <div class="seccion" style="margin-top: 2rem;">
+    <h3>Sección de Resultados</h3>
+    <div id="resultados" class="resultados">
+      <p>Introduce los datos y pulsa "Calcular".</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Autor: Alfonso Carmona</p>
+</footer>
+
+<script>
+  function calcular() {
+    const ancho = parseFloat(document.getElementById('ancho').value);
+    const alto = parseFloat(document.getElementById('alto').value);
+    const largo = parseFloat(document.getElementById('largo').value);
+    const material = document.getElementById('material').value;
+
+    const precioBase = parseFloat(document.getElementById('precioBase').value);
+    const incPlastico = parseFloat(document.getElementById('incPlastico').value);
+    const incCarton = parseFloat(document.getElementById('incCarton').value);
+    const incMadera = parseFloat(document.getElementById('incMadera').value);
+    const iva = parseFloat(document.getElementById('iva').value);
+
+    const salida = document.getElementById('resultados');
+
+    // Validaciones
+    if ([ancho, alto, largo].some(val => isNaN(val))) {
+      salida.innerHTML = "<p style='color:red;'>Por favor, completa todas las dimensiones.</p>";
+      return;
+    }
+
+    if ([ancho, alto, largo].some(val => val < 5)) {
+      salida.innerHTML = "<p style='color:red;'>❌ Ninguna dimensión puede ser menor a 5 cm.</p>";
+      return;
+    }
+
+    if ([ancho, alto, largo].some(val => val > 100)) {
+      salida.innerHTML = "<p style='color:red;'>❌ Ninguna dimensión puede ser mayor a 100 cm.</p>";
+      return;
+    }
+
+    const dimensiones = [ancho, alto, largo].sort((a,b) => a - b);
+    if (dimensiones[2] / dimensiones[0] > 5) {
+      salida.innerHTML = "<p style='color:red;'>❌ Las proporciones entre dimensiones son inválidas (superan un factor de 5).</p>";
+      return;
+    }
+
+    // Cálculos
+    const volumen = ancho * alto * largo; // en cm³
+    const superficie = 2 * (ancho * alto + ancho * largo + alto * largo); // en cm²
+    const superficieM2 = superficie / 10000; // en m²
+
+    let incremento = 0;
+    let matNombre = "";
+
+    switch (material) {
+      case "plastico": incremento = incPlastico; matNombre = "Plástico"; break;
+      case "carton": incremento = incCarton; matNombre = "Cartón"; break;
+      case "madera": incremento = incMadera; matNombre = "Madera"; break;
+    }
+
+    const precioSinIVA = precioBase * superficieM2 * (1 + incremento / 100);
+    const precioConIVA = precioSinIVA * (1 + iva / 100);
+
+    // Mostrar resultados
+    salida.innerHTML = `
+      <div class="resultado-linea">Dimensiones de la caja: ${ancho} x ${alto} x ${largo} cm</div>
+      <div class="resultado-linea">Volumen en cm³: ${volumen.toFixed(2)}</div>
+      <div class="resultado-linea">Superficie en cm²: ${superficie.toFixed(2)}</div>
+      <div class="resultado-linea">Material seleccionado: ${matNombre}</div>
+      <div class="resultado-linea">Precio sin IVA: ${precioSinIVA.toFixed(2)} €</div>
+      <div class="resultado-linea">Precio con IVA: ${precioConIVA.toFixed(2)} €</div>
+    `;
+  }
+</script>
+
+</body>
+</html>

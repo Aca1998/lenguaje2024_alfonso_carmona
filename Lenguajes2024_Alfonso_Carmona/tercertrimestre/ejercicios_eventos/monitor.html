@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- Autor: Alfonso Carmona Aguayo -->
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor de Eventos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #022c58;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    #zona {
+      border: 2px dashed #007BFF;
+      width: 500px;
+      height: 300px;
+      background-color: white;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #zona p {
+      pointer-events: none;
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    #circulo {
+      width: 60px;
+      height: 60px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: grab;
+    }
+
+    #historial {
+      width: 300px;
+      height: 300px;
+      overflow-y: scroll;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    #historial span {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    #limpiar {
+      margin-top: 1rem;
+      background-color: #022c58;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    #limpiar:hover {
+      background-color: #01408a;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Monitor de Eventos</h1>
+  </header>
+
+  <main>
+    <div>
+      <div id="zona">
+        <p>Interactúa aquí</p>
+        <div id="circulo" draggable="true"></div>
+      </div>
+      <!-- boton para limpiar el historial de eventos -->
+      <button id="limpiar">Limpiar Historial</button>
+    </div>
+
+    <div id="historial"> 
+        <!-- este div se van registrando todos los eventos -->
+    <strong>Registro:</strong>
+    </div>
+  </main>
+
+  <script>
+    // con esto obtenemos los elementos del documento
+    const zona = document.getElementById("zona");
+    const circulo = document.getElementById("circulo");
+    const historial = document.getElementById("historial");
+    const limpiarBtn = document.getElementById("limpiar");
+
+    // esta funcion sirve para registrar eventos en el historial
+    function registrar(mensaje) {
+      const hora = new Date().toLocaleTimeString(); //esto es para la hora actual 
+      const evento = document.createElement("span");
+      evento.textContent = `[${hora}] ${mensaje}`;
+      historial.appendChild(evento);
+      historial.scrollTop = historial.scrollHeight;
+    }
+
+    // esto es para cuando el raton entra dentro de la zona 
+    zona.addEventListener("mouseenter", () => registrar("El cursor entró en el div"));
+    zona.addEventListener("mouseleave", () => registrar("El cursor salió del div"));
+    zona.addEventListener("click", e => {
+      if (e.button === 0) registrar("Click dentro del div");
+      if (e.button === 2) registrar("Click derecho dentro del div");
+    });
+
+    //est es para que aparezca el menu cuando le damos click derecho
+    zona.addEventListener("contextmenu", e => e.preventDefault());
+
+    // eventos dentro de la ventana 
+    window.addEventListener("resize", () => registrar("La ventana ha cambiado de tamaño"));
+    window.addEventListener("blur", () => registrar("Se ha abandonado la ventana"));
+    window.addEventListener("focus", () => registrar("Se ha vuelto a la ventana"));
+    window.addEventListener("load", () => registrar("La página se ha recargado"));
+
+
+    
+
+// esto para cuando se empieza a arrastrar el circulo
+circulo.addEventListener("dragstart", () => registrar("El círculo está siendo arrastrado"));
+
+    
+//esto es para cuando se suelta el ciruculo dentro de la zona 
+    zona.addEventListener("drop", (e) => {
+      e.preventDefault();
+      registrar("El círculo fue soltado dentro del div");
+      const rect = zona.getBoundingClientRect();
+      const x = e.clientX - rect.left - 30;
+      const y = e.clientY - rect.top - 30;
+      //esto es para posicionar el circulo en ese punto 
+      circulo.style.left = `${x}px`;
+      circulo.style.top = `${y}px`;
+    });
+
+
+    //esto detecta si el circulo se suelta fuera de la zona 
+    document.body.addEventListener("drop", (e) => {
+      if (!zona.contains(e.target)) {
+        registrar("El círculo fue soltado fuera del div.");
+      }
+    });
+
+    //  para limpiar historial
+    limpiarBtn.addEventListener("click", () => {
+      historial.innerHTML = "<strong>Registro:</strong>";
+    });
+  </script>
+
+</body>
+</html>
