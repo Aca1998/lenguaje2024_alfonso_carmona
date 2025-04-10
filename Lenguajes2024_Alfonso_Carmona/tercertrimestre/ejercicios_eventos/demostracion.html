@@ -141,14 +141,14 @@
       resultado.textContent = 'Se hizo clic en el PADRE';
     });
 
-    // Hijo 1 con stopPropagation
+    // hijo 1 con stopPropagation detiene que no se ejecute el padre
     hijo1.addEventListener('click', (e) => {
-      e.stopPropagation(); // Detiene que el clic llegue al padre
+      e.stopPropagation(); // aplicamos el stop para que no se ejecute el padre 
       console.log('Clic en HIJO 1 (con stopPropagation)');
       resultado.textContent = 'Clic en HIJO 1 (con stopPropagation)';
     });
 
-    // Hijo 2 sin stopPropagation (propaga el evento)
+    // hijo 2 sin stopPropagation  
     hijo2.addEventListener('click', () => {
       console.log('Clic en HIJO 2 (sin stopPropagation)');
       resultado.textContent = 'Clic en HIJO 2 (sin stopPropagation) → también se ejecuta el PADRE';
@@ -173,9 +173,10 @@
       }
     });
 
-    // Botón que cambia el estado del enlace
+    // con este boton cambiamos el estado del enlace 
     toggle.addEventListener('click', () => {
-      desactivado = !desactivado; // Alterna entre activado y desactivado
+      desactivado = !desactivado; // cambia entre activa o desactivado 
+
       console.log(`Enlace ${desactivado ? 'desactivado' : 'activado'}`);
       resultado.textContent = `Has ${desactivado ? 'desactivado' : 'activado'} el enlace.`;
     });
