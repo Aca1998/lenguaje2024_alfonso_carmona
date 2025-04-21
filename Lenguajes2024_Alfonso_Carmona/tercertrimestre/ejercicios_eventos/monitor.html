@@ -152,6 +152,7 @@ circulo.addEventListener("dragstart", () => registrar("El círculo está siendo 
       const rect = zona.getBoundingClientRect();
       const x = e.clientX - rect.left - 30;
       const y = e.clientY - rect.top - 30;
+      
       //esto es para posicionar el circulo en ese punto 
       circulo.style.left = `${x}px`;
       circulo.style.top = `${y}px`;
