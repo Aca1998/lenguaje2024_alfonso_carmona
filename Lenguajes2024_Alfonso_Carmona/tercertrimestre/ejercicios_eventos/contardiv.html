@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contar DIV</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      text-align: center;
+    }
+
+    header, footer {
+        background-color: #022c58;
+        color: white;
+        padding: 0.5rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .tiempo {
+      font-size: 2rem;
+      color: #007BFF;
+      margin: 1rem 0;
+    }
+
+    .botones button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #022c58;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .botones button:hover {
+      background-color: #022c58;
+    }
+
+    .resultado {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1rem 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 1rem auto;
+      width: fit-content;
+    }
+
+    .area-divs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .area-divs div {
+      width: 80px;
+      height: 40px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Contar DIV </h1>
+</header>
+
+<main>
+  <div class="botones">
+    <button onclick="contarDivs()">Contar DIVs</button>
+  </div>
+
+  <div class="resultado" id="resultadoDivs">
+    <p>Total de &lt;div&gt;: -</p>
+    <p>Con contenido: -</p>
+    <p>Vacíos: -</p>
+  </div>
+
+  <!-- Divs de ejemplo -->
+  <div class="area-divs">
+    <div>Hola</div>
+    <div></div>
+    <div>👋</div>
+    <div></div>
+  </div>
+</main>
+
+<footer>
+  <p>Autor: Alfonso Carmona</p>
+</footer>
+
+<script>
+  function contarDivs() {
+    const divs = document.querySelectorAll('div');
+    let conContenido = 0;
+    let vacios = 0;
+
+    divs.forEach(div => {
+      if (div.textContent.trim() !== "") {
+        conContenido++;
+      } else {
+        vacios++;
+      }
+    });
+
+    document.getElementById("resultadoDivs").innerHTML = `
+      <p>Total de &lt;div&gt;: ${divs.length}</p>
+      <p>Con contenido: ${conContenido}</p>
+      <p>Vacíos: ${vacios}</p>
+    `;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadena de texto</title>
+  <style>
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      background-color: #022c58;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      padding-bottom: 100px; /* espacio para que no tape el footer */
+      text-align: center;
+    }
+
+    .tiempo {
+      font-size: 2rem;
+      color: #007BFF;
+      margin: 1rem 0;
+    }
+
+    .botones button {
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #022c58;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .botones button:hover {
+      background-color: #01408a;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .resultado {
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .resultado p {
+      margin: 0.5rem 0;
+    }
+
+    .resultado strong {
+      color: #022c58;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cadena de texto</h1>
+  </header>
+
+  <main>
+    <!-- Entrada del usuario -->
+    <input type="text" id="entrada" placeholder="Escribe tu texto aquí...">
+    <div class="botones">
+      <button onclick="procesarTexto()">Procesar</button>
+    </div>
+
+    <!-- Resultados -->
+    <div class="resultado" id="resultado">
+      <p>Introduce el texto....</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Alfonso Carmona | 3ºTrimestre</p>
+  </footer>
+
+  <script>
+    //en esta funciono obtenemos el valor de el texto que escribimos 
+    function procesarTexto() {
+      const texto = document.getElementById('entrada').value.trim();
+      const resultado = document.getElementById('resultado');
+
+        //este if es para verificar si el usuario no ha escrito nada 
+      if (texto === "") {
+        resultado.innerHTML = "<p style='color:red;'>Por favor, escribe algún texto.</p>";
+        return;
+      }
+
+      // con esto se convierte la primera letra de cada palabra en mayuscula 
+      const capitalizado = texto
+        .split(" ") // esto es para separar la cadena en palabras 
+        .map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase())
+        .join(" "); //con esto unimos las palabras con espacios 
+
+      // ahora mostramos los resultados usando propiedades y string 
+      resultado.innerHTML = `
+        <p><strong>Texto original:</strong> ${texto}</p>
+        <p><strong>Longitud:</strong> ${texto.length}</p>
+        <p><strong>Número de palabras:</strong> ${texto.split(" ").length}</p>
+        <p><strong>Mayúsculas:</strong> ${texto.toUpperCase()}</p>
+        <p><strong>Minúsculas:</strong> ${texto.toLowerCase()}</p>
+        <p><strong>Capitalizado:</strong> ${capitalizado}</p>
+        <p><strong>Primer carácter:</strong> ${texto.charAt(0)}</p>
+        <p><strong>Último carácter:</strong> ${texto.charAt(texto.length - 1)}</p>
+        <p><strong>Concatenado con " JS":</strong> ${texto + " JS"}</p>
+        <p><strong>Contiene "a":</strong> ${texto.includes("a") ? "Sí" : "No"}</p>
+        <p><strong>Reemplazar "a" por "@":</strong> ${texto.replaceAll("a", "@")}</p>
+        <p><strong>Subcadena (0-5):</strong> ${texto.substring(0, 5)}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>

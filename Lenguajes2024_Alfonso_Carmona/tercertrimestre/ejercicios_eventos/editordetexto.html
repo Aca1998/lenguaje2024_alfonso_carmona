@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editor con TinyMCE y html2pdf</title>
+
+  <!-- Cargar TinyMCE desde CDN -->
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+  <!-- Cargar html2pdf.js desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    /* Plantilla personalizada */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      background-color: #022c58;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      padding-bottom: 100px; /* espacio para el footer */
+      text-align: center;
+    }
+
+    .botones button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .botones button:hover {
+      background-color: #0056b3;
+    }
+
+    #output {
+      margin-top: 2rem;
+      background-color: white;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Editor con TinyMCE y html2pdf</h1>
+</header>
+
+<main>
+  <!-- Editor de texto -->
+  <textarea id="editorTexto">Esto es un editor de texto</textarea>
+
+  <div class="botones">
+    <button onclick="pasarADiv()">📤 Pasar texto a div</button>
+    <button onclick="generarPDF()">📄 Generar PDF</button>
+  </div>
+
+  <!-- Aquí se mostrará el contenido transformado -->
+  <div id="output"></div>
+</main>
+
+<footer>
+  <p>Autor: Alfonso Carmona</p>
+</footer>
+
+<script>
+  // Inicializa TinyMCE
+  tinymce.init({
+    selector: '#editorTexto',
+    height: 300,
+    menubar: false,
+    plugins: 'lists link',
+    toolbar: 'undo redo | bold italic | bullist numlist | alignleft aligncenter alignright'
+  });
+
+  // Función para pasar el contenido del editor al <div>
+  function pasarADiv() {
+    const contenido = tinymce.get("editorTexto").getContent();
+    document.getElementById("output").innerHTML = contenido;
+  }
+
+  // Función para generar el PDF del <div>
+  function generarPDF() {
+    const elemento = document.getElementById("output");
+    html2pdf().set({
+      margin: 1,
+      filename: 'contenido.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    }).from(elemento).save();
+  }
+</script>
+
+</body>
+</html>

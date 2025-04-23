@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modificar Clases del DOM</title>
+  <style>
+    /* Plantilla base */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      text-align: center;
+    }
+
+    header, footer {
+    
+  background-color: #022c58;
+  color: white;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+    
+
+    main {
+      padding: 2rem;
+    }
+
+    .tiempo {
+      font-size: 2rem;
+      color: #007BFF;
+      margin: 1rem 0;
+    }
+
+    .botones button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #022c58;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .botones button:hover {
+      background-color: #022c58;
+    }
+
+ /* css para la tarjeta  */
+    .tarjeta {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+      display: inline-block;
+    }
+
+    /* con estas clases modificamos el estado de la tarjeta  */
+    .fondo { background-color: #d1ecf1; }
+    .borde { border: 2px dashed #007BFF; }
+    .redondeado { border-radius: 25px; }
+    .grande { transform: scale(1.3); }
+    .chico { transform: scale(0.7); }
+    .oculto { display: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Manipulacion Dom</h1>
+</header>
+
+<main>
+  <div class="botones">
+    <button onclick="tarjeta.classList.toggle('fondo')">Color Fondo</button>
+    <button onclick="tarjeta.classList.toggle('borde')">Bordes Punteados</button>
+    <button onclick="tarjeta.classList.toggle('redondeado')">Bordes Redondeados</button>
+    <button onclick="tarjeta.classList.remove('oculto')">Aparecer</button>
+    <button onclick="tarjeta.classList.add('oculto')">Desaparecer</button>
+    <button onclick="tarjeta.classList.add('grande'); tarjeta.classList.remove('chico')">Tamaño Grande</button>
+    <button onclick="tarjeta.classList.add('chico'); tarjeta.classList.remove('grande')">Tamaño Chico</button>
+  </div>
+
+  <div id="tarjeta" class="tarjeta">
+    Modifica la tarjeta
+  </div>
+</main>
+
+<footer>
+  <p>Alfonso Carmona | 3ºTrimestre</p>
+</footer>
+
+<script>
+  // Referencia al div que se va a modificar
+  const tarjeta = document.getElementById("tarjeta");
+</script>
+
+</body>
+</html>

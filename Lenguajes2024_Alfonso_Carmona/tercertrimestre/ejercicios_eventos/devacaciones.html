@@ -130,12 +130,12 @@
         const mensaje = document.getElementById("mensaje");
 
         unicornio.addEventListener("dragstart", () => {
-            unicornio.classList.remove("en-destino"); // Quitar clase si vuelve a arrastrarse
+            unicornio.classList.remove("en-destino"); // quitar clase si vuelve a arrastrarse
         });
 
         destinos.forEach(destino => {
             destino.addEventListener("dragover", (e) => {
-                e.preventDefault(); // Necesario para permitir el drop
+                e.preventDefault(); // necesario para permitir el drop
             });
 
             destino.addEventListener("drop", () => {
