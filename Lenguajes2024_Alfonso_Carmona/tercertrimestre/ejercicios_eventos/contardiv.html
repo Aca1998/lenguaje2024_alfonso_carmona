@@ -101,7 +101,7 @@
 </main>
 
 <footer>
-  <p>Autor: Alfonso Carmona</p>
+  <p>Autor: Alfonso Carmona | 3ºTrimestre </p>
 </footer>
 
 <script>
@@ -110,15 +110,15 @@
     let conContenido = 0;
     let vacios = 0;
 
-    divs.forEach(div => {
+    divs.forEach(div => { //con este for rrecorremos todos los div , si esta vacio se suma a vacios 
       if (div.textContent.trim() !== "") {
         conContenido++;
       } else {
         vacios++;
       }
     });
-
-    document.getElementById("resultadoDivs").innerHTML = `
+//aqui mostramos los resultados dentro del div , usamos el template para insertar numeros 
+    document.getElementById("resultadoDivs").innerHTML = ` 
       <p>Total de &lt;div&gt;: ${divs.length}</p>
       <p>Con contenido: ${conContenido}</p>
       <p>Vacíos: ${vacios}</p>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Destino Vacacional</title>
     <style>
+        /* autor : Alfonso Carmona */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -125,25 +126,25 @@
     </footer>
 
     <script>
-        const unicornio = document.getElementById("unicornio");
-        const destinos = document.querySelectorAll(".destino");
-        const mensaje = document.getElementById("mensaje");
+        const unicornio = document.getElementById("unicornio"); //referencia para la imagen que se puede arrastrar 
+        const destinos = document.querySelectorAll(".destino"); //para selecionar todos los elementos 
+        const mensaje = document.getElementById("mensaje"); //para selecinar el parrafo donde se muestra el destino 
 
-        unicornio.addEventListener("dragstart", () => {
+        unicornio.addEventListener("dragstart", () => { //evento que se activa cuando empezamos a arrastar el unicornio
             unicornio.classList.remove("en-destino"); // quitar clase si vuelve a arrastrarse
         });
 
-        destinos.forEach(destino => {
-            destino.addEventListener("dragover", (e) => {
+        destinos.forEach(destino => { //con este foreach rrecoremos cada destino
+            destino.addEventListener("dragover", (e) => { //esto permite dejar el unicornio encima del destino 
                 e.preventDefault(); // necesario para permitir el drop
             });
 
-            destino.addEventListener("drop", () => {
+            destino.addEventListener("drop", () => { //este evento se actica cuando soltamos el unicornio en un destino 
                 const lugar = destino.getAttribute("data-lugar");
-                mensaje.textContent = `¡Me voy a ${lugar}!`;
+                mensaje.textContent = `¡Me voy a ${lugar}!`; //se cambia el texto para informar del nuevo destino
                 
 
-                destino.appendChild(unicornio);
+                destino.appendChild(unicornio); //esto es para colocar el unicornio dentro del cuadro del destino
                 unicornio.classList.add("en-destino");
 
               

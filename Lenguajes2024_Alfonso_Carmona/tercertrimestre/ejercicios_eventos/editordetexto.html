@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <title>Editor con TinyMCE y html2pdf</title>
 
-  <!-- Cargar TinyMCE desde CDN -->
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <!-- enlace para cargar tinyMCE desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js"></script>
 
-  <!-- Cargar html2pdf.js desde CDN -->
+
+  <!-- enlace para cargar html2pdf.js desde CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <style>
-    /* Plantilla personalizada */
+   
     html, body {
       height: 100%;
       margin: 0;
@@ -38,7 +39,7 @@
     main {
       flex: 1;
       padding: 2rem;
-      padding-bottom: 100px; /* espacio para el footer */
+      padding-bottom: 100px; 
       text-align: center;
     }
 
@@ -72,52 +73,52 @@
 <body>
 
 <header>
-  <h1>Editor con TinyMCE y html2pdf</h1>
+  <h1>Pagina con TinyMCE y html2pdf</h1>
 </header>
 
 <main>
   <!-- Editor de texto -->
-  <textarea id="editorTexto">Esto es un editor de texto</textarea>
+  <textarea id="editorTexto"></textarea>
 
   <div class="botones">
-    <button onclick="pasarADiv()">📤 Pasar texto a div</button>
-    <button onclick="generarPDF()">📄 Generar PDF</button>
+    <button onclick="pasarADiv()">Pasar texto a div</button>
+    <button onclick="generarPDF()">Generar PDF</button>
   </div>
 
-  <!-- Aquí se mostrará el contenido transformado -->
+  <!-- aqui se muestra el contenido ya trasformado  -->
   <div id="output"></div>
 </main>
 
 <footer>
-  <p>Autor: Alfonso Carmona</p>
+  <p>Alfonso Carmona | 3ºTrimestre</p>
 </footer>
 
 <script>
-  // Inicializa TinyMCE
+  // con este bloque lo primero inicializamos el editro tiny , y luego convierte 
   tinymce.init({
-    selector: '#editorTexto',
+    selector: '#editorTexto', 
     height: 300,
-    menubar: false,
-    plugins: 'lists link',
-    toolbar: 'undo redo | bold italic | bullist numlist | alignleft aligncenter alignright'
+    menubar: false, //con esto ocultamos la barra de menus
+    plugins: 'lists link', //esto es para activar solo los pluggins necesarios
+    toolbar: 'undo redo | bold italic | bullist numlist | alignleft aligncenter alignright' //esto sirve para definir que herramientas aparecen en el menu , como negrita, cursiva..
   });
 
-  // Función para pasar el contenido del editor al <div>
+  // funcion para pasar el contenido del editor al div
   function pasarADiv() {
     const contenido = tinymce.get("editorTexto").getContent();
-    document.getElementById("output").innerHTML = contenido;
+    document.getElementById("output").innerHTML = contenido; //con esto ponemos el contenido dentro del div para verlo como vista previa 
   }
 
-  // Función para generar el PDF del <div>
+  // funcion para generar el PDF del div 
   function generarPDF() {
-    const elemento = document.getElementById("output");
+    const elemento = document.getElementById("output"); //selecionamos el div que queremos convertir a pdf 
     html2pdf().set({
-      margin: 1,
-      filename: 'contenido.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    }).from(elemento).save();
+      margin: 1, //esto para darle margen al PDF
+      filename: 'contenido.pdf', //nombre del pdf generado 
+      image: { type: 'jpeg', quality: 0.98 }, //calidad de imagen 
+      html2canvas: { scale: 2 }, //escala de renderizado 
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } //esto es para el tamaño 
+    }).from(elemento).save(); //esto lo convierte y descarga el pdf 
   }
 </script>
 
