@@ -1,49 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <!-- autor : Alfonso Carmona  -->
+    <!-- Nombre del autor: Alfonso Carmona Aguayo -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f3f3f3;
-    }
-
-
-
-    /* Estilo de enlaces */
-    a {
-      display: block;
-      margin: 10px 0;
-      text-decoration: none;
-      color: #007BFF;
-      font-size: 1.2rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-    </style>
     <title>Index para Ejercicios de Eventos</title>
+    <style>
+        /* General */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #022c58;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Secciones principales */
+        main {
+            padding: 1.5rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: #495057;
+            border-bottom: 2px solid #002e5f;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Lista de enlaces */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            padding: 0.8rem;
+        }
+
+        ul li:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <div>
-    <a href="./cadenadetexto.html">Ejercicio Cadena de texto</a>
-    <a href="./contardiv.html">Ejercicio Contar Div</a>
-    <a href="./cronometro.html">Ejercicio Cronometro</a>
-    <a href="./detector_teclas.html">Ejercicio Detertor de teclas</a>
-    <a href="./devacaciones.html">Ejercicio Unicornio</a>
-    <a href="./dom.html">Ejercicio DOM</a>
-    <a href="./editordetexto.html">Ejercicio Editor de texto </a>
-    <a href="./monitor.html">Ejercicio Monitor</a>
-    <a href="./presupuesto_cajas.html">Ejercicio Presupuesto de cajas</a>
-    
-    
-</div>
-    
+
+    <header>
+        <h1>Ejercicios de Eventos</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Lista de Ejercicios</h2>
+            <ul>
+                <li><a href="./cadenadetexto.html">Ejercicio Cadena de texto</a></li>
+                <li><a href="./contardiv.html">Ejercicio Contar Div</a></li>
+                <li><a href="./cronometro.html">Ejercicio Cronómetro</a></li>
+                <li><a href="./demostracion.html">Ejercicio Demostracion Propagation y PreventDefault </a></li>
+                <li><a href="./detector_teclas.html">Ejercicio Detector de teclas</a></li>
+                <li><a href="./devacaciones.html">Ejercicio Unicornio</a></li>
+                <li><a href="./dom.html">Ejercicio DOM</a></li>
+                <li><a href="./editordetexto.html">Ejercicio Editor de texto</a></li>
+                <li><a href="./monitor.html">Ejercicio Monitor</a></li>
+                <li><a href="./presupuesto_cajas.html">Ejercicio Presupuesto de cajas</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Alfonso Carmona | 3º Trimestre</p>
+    </footer>
+
 </body>
 </html>

@@ -1,87 +1,91 @@
+/* Nombre del autor: Alfonso Carmona Aguayo */
+
+/* General */
 body {
-  font-family: Arial, sans-serif; /* tipo de letra utilizado para el index */
-  margin: 0; 
-  padding: 0; 
-  line-height: 1.6; 
-  width: 1200px; 
-  margin: auto; 
-  box-sizing: border-box; 
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
 }
 
+/* Encabezado */
 header {
-  background-color: #000911; /* Color de fondo */
-  display: flex; 
-  justify-content: center; /* Esto es para centrar el contenido */
-  padding: 15px; 
-  position: relative; 
+    background-color: #022c58;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
 }
 
 header h1 {
-  font-family: 'Poppins', sans-serif; /* letra para el encabezado */
-  color: #FFFFFF; /* Color */
-  margin: 0; 
-  font-size: 30px; 
+    margin: 0;
+    font-size: 2.5rem;
 }
 
-.menuprincipal {
-  background-color: #ca7676; 
-  padding: 10px;
-  text-align: right; 
-  border-radius: 5px; /* esto es para poner el borde redondeado */
-  margin-top: 15px;  
+/* Recuadros decorativos */
+.recuadrogris {
+    height: 8px;
+    background-color: #dee2e6;
 }
 
-.menuprincipal nav a:hover {
-  color: #FFFFFF;
+.recuadroazul {
+    height: 8px;
+    background-color: #007bff;
 }
 
-main {
-  padding: 0;
-  width: 100%;
-  margin: 0 auto; /* Centra el elemento horizontalmente */
+/* Navegación principal */
+.menuprincipal nav {
+    text-align: center;
+    padding: 1.2rem;
+    background-color: #e9ecef;
 }
 
-/* TEXTO */
 .tituloproyectos {
-  font-family: 'Poppins', sans-serif;
-  color: #000000;
-  text-align: center;
-  font-size: 43px; 
-  margin: 20px 0; /* Un margen de 20 píxeles arriba y abajo; y 0 píxeles a los dos lados */
+    font-size: 1.5rem;
+    color: #002e5f;
+    margin: 0;
+    font-weight: bold;
 }
 
-.enlacecuadrados {
-  background-color: #0124c2; 
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 22px;
-  height: 60px;
- 
-  margin: 20px 0px;
-  padding: 10px;
-  display: flex;
-  align-items: center; /* Los elementos se alinea en el centro */
-  justify-content: center; /* El texto se alinea en el centro */
-  border-radius: 10px;
+/* Contenido principal */
+main {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
 }
 
-.enlacecuadrados a {
-  text-decoration: none;
-  color: #000000;
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 80px;
+/* Lista de enlaces estilo clásico */
+.menu {
+    margin-top: 1.5rem;
 }
 
-.enlacecuadrados:hover {
-  background-color: #0c0d0e; /* Esto es cuando pasas el mouse cambie de color  */
+.menu a {
+    display: block;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.enlacecuadrados:hover a {
-  color: #FFFFFF; /* Cambiar color de la tipografía al pasar el raton  */
+.menu a:hover {
+    color: #0056b3;
+    transform: translateX(5px);
 }
 
+/* Responsive ajustes */
+@media (max-width: 600px) {
+    .tituloproyectos {
+        font-size: 1.2rem;
+    }
 
+    header h1 {
+        font-size: 2rem;
+    }
 
+    .menu a {
+        font-size: 1rem;
+    }
+}
